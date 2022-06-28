@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Plant extends Model
 {
     use HasFactory;
+
+    public function block(){
+        return $this->belongsTo(Block::class,'plant_id');
+    }
 }
