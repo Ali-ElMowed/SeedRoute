@@ -19,7 +19,7 @@ use App\Http\Controllers\JWTController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['middleware' => 'api'], function($router) {
+Route::group(['middleware' => 'api'], function ($router) {
     Route::post('/register', [JWTController::class, 'register']);
     Route::post('/login', [JWTController::class, 'login']);
     Route::post('/logout', [JWTController::class, 'logout']);
@@ -27,7 +27,7 @@ Route::group(['middleware' => 'api'], function($router) {
     Route::post('/profile', [JWTController::class, 'profile']);
 });
 
-Route::get('/getPlants/{id?}',[PlantController::class,'getPlants']);
-Route::post('/addPlant',[PlantController::class,'addPlant']);
-Route::delete('/deletePlant/{id}',[PlantController::class,'destroyPlant']);
-Route::post('/updatePlant/{id}',[PlantController::class,'updatePlant']);
+Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
+Route::post('/addPlant', [PlantController::class, 'addPlant']);
+Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
+Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
