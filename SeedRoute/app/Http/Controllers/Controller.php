@@ -56,6 +56,28 @@ class Controller extends BaseController
 
     }
 
+    //function to update plant
+    public function updatePlant(Request $request, $id){
+
+        $plant = Plant::find($id);
+
+        if($plant){
+            
+            $plant -> name = $request -> name;
+            $plant -> growth_duration = $request -> growth_duration;
+            $plant -> watering = $request -> watering;
+            $plant -> type = $request -> type;
+            $plant -> soil_type = $request -> soil_type;
+            $plant -> number_of_phases = $request -> number_of_phases;
+            $plant -> update();
+
+            return self::returnResponse("Plant updated",200);
+        }
+        else{
+            return self::returnResponse("Plant not found",404);
+        }
+    }
+
     //function to be used in all functions for response return
     public function returnResponse($status,$code,$data = null)
     {
