@@ -41,6 +41,21 @@ class Controller extends BaseController
 
     }
 
+    //function to delete plant 
+    public function destroyPlant($id){
+
+        $plant = Plant::find($id);
+
+        if($plant){
+            $plant->delete();
+
+            return self::returnResponse("Plant deleted", 200);
+        }else{
+            return self::returnResponse("Plant not found",404);
+        }
+
+    }
+
     //function to be used in all functions for response return
     public function returnResponse($status,$code,$data = null)
     {
