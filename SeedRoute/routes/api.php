@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/getPlants/{id?}',[PlantController::class,'getPlants']);
+Route::post('/addPlant',[PlantController::class,'addPlant']);
