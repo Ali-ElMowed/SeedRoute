@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalendarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlantController;
@@ -27,7 +28,12 @@ Route::group(['middleware' => 'api'], function ($router) {
     Route::post('/profile', [JWTController::class, 'profile']);
 });
 
+//Plants routes
 Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
 Route::post('/addPlant', [PlantController::class, 'addPlant']);
 Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
 Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
+
+
+//Calendars routes
+Route::get('/getCalendars/{id?}',[CalendarController::class, 'getCalendars']);
