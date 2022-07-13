@@ -37,3 +37,4 @@ Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
 
 //Calendars routes
 Route::get('/getCalendars/{id?}',[CalendarController::class, 'getCalendars']);
+Route::post('/addCalendar', [CalendarController::class, 'addCalendar']);

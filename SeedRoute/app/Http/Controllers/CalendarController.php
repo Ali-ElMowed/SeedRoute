@@ -18,6 +18,22 @@ class CalendarController extends Controller
 
         return self::returnResponse("calendars found",200,$calendars);
     }
+
+     //function to add calendar 
+     public function addCalendar(Request $request){
+        $calendar = new Calendar;
+
+        $calendar -> block_id = $request -> block_id;
+        $calendar -> date = $request -> date;
+        $calendar -> phase = $request -> phase;
+        $calendar -> watering = $request -> watering;
+        $calendar -> watering_time = $request -> watering_time;
+        $calendar -> save();
+
+        return self::returnResponse("calendar added",200);
+
+    }
+
      //function to be used in all functions for response return
      public function returnResponse($status,$code,$data = null)
      {
