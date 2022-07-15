@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Block extends Model
 {
     use HasFactory;
-
-    public function calendar(){
-        return $this->hasMany(Calender::class,'block_id');
-    }
 }
