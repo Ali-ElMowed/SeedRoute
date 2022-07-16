@@ -16,7 +16,7 @@ class CalendarController extends Controller
             $calendars = Calendar::all();
         }
 
-        return self::returnResponse("calendars found", 200, $calendars);
+        return jsonResponse("calendars found", 200, $calendars);
     }
 
     //function to add calendar 
@@ -31,7 +31,7 @@ class CalendarController extends Controller
         $calendar->watering_time = $request->watering_time;
         $calendar->save();
 
-        return self::returnResponse("calendar added", 200);
+        return jsonResponse("calendar added", 200);
     }
 
     //function to delete calendar 
@@ -43,9 +43,9 @@ class CalendarController extends Controller
         if ($calendar) {
             $calendar->delete();
 
-            return self::returnResponse("calendar deleted", 200);
+            return jsonResponse("calendar deleted", 200);
         } else {
-            return self::returnResponse("calendar not found", 404);
+            return jsonResponse("calendar not found", 404);
         }
     }
 
@@ -64,9 +64,9 @@ class CalendarController extends Controller
             $calendar->watering_time = $request->watering_time;
             $calendar->update();
 
-            return self::returnResponse("Calendar updated", 200);
+            return jsonResponse("Calendar updated", 200);
         } else {
-            return self::returnResponse("Calendar not found", 404);
+            return jsonResponse("Calendar not found", 404);
         }
     }
 
