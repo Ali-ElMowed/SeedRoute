@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('calendars', function (Blueprint $table) {
-            $table->renameColumn('selected_block_id', 'selected_block_id');
+            $table->renameColumn('block_id', 'selected_block_id');
         });
     }
 };
