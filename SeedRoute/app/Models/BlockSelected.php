@@ -9,7 +9,9 @@ class BlockSelected extends Model
 {
     use HasFactory;
 
-    private $table = 'blocks_selected';
+    public $table = 'blocks_selected';
+
+    public $guarded =[];
 
     public function calendar()
     {

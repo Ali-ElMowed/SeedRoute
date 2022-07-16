@@ -15,10 +15,6 @@ class JWTController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
-    }
 
     /**
      * Register user.
@@ -33,15 +29,15 @@ class JWTController extends Controller
             'password' => 'required|string|confirmed|min:6',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
 
         $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
-            ]);
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
 
         return response()->json([
             'message' => 'User successfully registered',
