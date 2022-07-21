@@ -8,7 +8,7 @@ interface RegisterScreenProps {
   
   const Register = (props: RegisterScreenProps) => {
   
-    const goHome = () => props.navigation.navigate("Home");
+    const goSketch = () => props.navigation.navigate("Sketch");
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -54,7 +54,7 @@ interface RegisterScreenProps {
          style={[styles.passwordInput,styles.input]}
          />
          <Btn 
-         onPress={goHome}
+         onPress={goSketch}
          text={"Register"}
          style={styles.btn}/>
          </View>
