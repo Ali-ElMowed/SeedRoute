@@ -9,7 +9,7 @@ interface loginScreenProps {
 }
 
 const LoginScreen = (props: loginScreenProps) => {
-  const goHome = () => props.navigation.navigate("Home");
+  const goMyLand = () => props.navigation.navigate("MyLand");
   const goToRegister = () => props.navigation.navigate("Register");
 
   const [email, setEmail] = useState("");
@@ -35,12 +35,12 @@ const LoginScreen = (props: loginScreenProps) => {
       <Btn
         // title='Login'
         //  onPress={goHome}
-        onPress={goHome}
+        onPress={goMyLand}
         text={"Login"}
         style={styles.btn}
       />
       <Pressable onPress={goToRegister}>
-        <Text style={styles.registerBtn}>Register</Text>
+        <Text style={styles.registerBtn}>You're not a member yet? Register</Text>
       </Pressable>
     </ScrollView>
   );
