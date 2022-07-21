@@ -9,7 +9,7 @@ interface loginScreenProps {
 }
 
 const LoginScreen = (props: loginScreenProps) => {
-  const goMyLand = () => props.navigation.navigate("MyLand");
+  const goHome = () => props.navigation.navigate("Home");
   const goToRegister = () => props.navigation.navigate("Register");
 
   const [email, setEmail] = useState("");
@@ -34,8 +34,8 @@ const LoginScreen = (props: loginScreenProps) => {
         
       <Btn
         // title='Login'
-        //  onPress={goHome}
-        onPress={goMyLand}
+        //  onPress={goSketch}
+        onPress={goHome}
         text={"Login"}
         style={styles.btn}
       />
