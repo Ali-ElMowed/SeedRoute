@@ -2,9 +2,9 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "./screens/login/login.screen";
-import Home from "./screens/home/home.screen";
-import MylandScreen from "./screens/Myland/Myland.screen";
 import Register from "./screens/register/Register.screen";
+import HomeScreen from "./screens/Home/Home.screen";
+import Sketch from "./screens/Sketch/Sketch.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -23,11 +23,11 @@ const AppNavigator = () => (
       }}
     >
       <Screen name="Login" component={LoginScreen}></Screen>
-      <Screen name="Home" component={Home}></Screen>
+      <Screen name="Sketch" component={Sketch}></Screen>
       <Screen
-        name="MyLand"
-        component={MylandScreen}
-        options={{ title: "My Land" }}
+        name="Home"
+        component={HomeScreen}
+        options={{ title: "Home" }}
       ></Screen>
       <Screen name="Register" component={Register}></Screen>
     </Navigator>
