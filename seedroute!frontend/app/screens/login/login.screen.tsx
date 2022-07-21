@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Text, View, Image, TextInput, StyleSheet,ScrollView } from "react-native";
+import { Button, Text, View, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-native";
 import Btn from "../../Components/Btn";
 
 
@@ -10,6 +10,7 @@ interface loginScreenProps {
 
 const LoginScreen = (props: loginScreenProps) => {
   const goHome = () => props.navigation.navigate("Home");
+  const goToRegister = () => props.navigation.navigate("Register");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +39,9 @@ const LoginScreen = (props: loginScreenProps) => {
         text={"Login"}
         style={styles.btn}
       />
+      <Pressable onPress={goToRegister}>
+        <Text style={styles.registerBtn}>Register</Text>
+      </Pressable>
     </ScrollView>
   );
 
@@ -78,6 +82,13 @@ const styles = StyleSheet.create ({
     height:200,
     margin:100,
     marginTop:50
+  },
+  registerBtn:{
+    alignSelf:'center',
+    marginTop:15,
+    color:'white',
+    fontSize:16,
+    textDecorationLine:'underline'
   }
 })
 
