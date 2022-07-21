@@ -1,32 +1,37 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "./screens/login/login.screen";
-import Home from "./screens/home/home.screen"
-import MylandScreen from './screens/Myland/Myland.screen';
+import Home from "./screens/home/home.screen";
+import MylandScreen from "./screens/Myland/Myland.screen";
+import Register from "./screens/register/Register.screen";
 
+const { Navigator, Screen } = createNativeStackNavigator();
 
-const { Navigator,Screen} = createNativeStackNavigator();
-
-const AppNavigator = () =>(
-    <NavigationContainer>
-        <Navigator initialRouteName='login'  
-        screenOptions={{
+const AppNavigator = () => (
+  <NavigationContainer>
+    <Navigator
+      initialRouteName="login"
+      screenOptions={{
         headerStyle: {
-          backgroundColor: '#0D9B81',
+          backgroundColor: "#0D9B81",
         },
-        headerTintColor: '#fff',
+        headerTintColor: "#fff",
         headerTitleStyle: {
-          fontWeight: 'bold',
+          fontWeight: "bold",
         },
       }}
-      >
-            <Screen name="Login" component={LoginScreen}></Screen>
-            <Screen name="Home" component={Home}></Screen> 
-             <Screen name="MyLand" component={MylandScreen} options={{title:"My Land"}}></Screen>
- 
-        </Navigator>
-    </NavigationContainer>
-)
+    >
+      <Screen name="Login" component={LoginScreen}></Screen>
+      <Screen name="Home" component={Home}></Screen>
+      <Screen
+        name="MyLand"
+        component={MylandScreen}
+        options={{ title: "My Land" }}
+      ></Screen>
+      <Screen name="Register" component={Register}></Screen>
+    </Navigator>
+  </NavigationContainer>
+);
 
-export default AppNavigator
+export default AppNavigator;
