@@ -57,4 +57,13 @@ class BlockController extends Controller
             return jsonResponse('error', 500, [$e->getMessage()]);
         }
     }
+
+    public function getSelectedBlocks()
+    {
+        try {
+            $selected_blocks = auth()->user()->blocks_selected->blocks;
+        } catch (Exception $e) {
+            return jsonResponse('error', 500, [$e->getMessage()]);
+        }
+    }
 }
