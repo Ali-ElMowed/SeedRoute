@@ -17,4 +17,9 @@ class BlockSelected extends Model
     {
         return $this->hasMany(Calender::class, 'selected_block_id');
     }
+
+    public function blocks()
+    {
+        return $this->belongsTo(Block::class,'block_id');
+    }
 }
