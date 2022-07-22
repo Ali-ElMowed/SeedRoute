@@ -6,6 +6,7 @@ import Register from "./screens/register/Register.screen";
 import HomeScreen from "./screens/Home/Home.screen";
 import Sketch from "./screens/Sketch/Sketch.screen";
 import Plant from "./screens/Plant/Plant.screen";
+import Block from "./screens/Block/Block.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -32,6 +33,7 @@ const AppNavigator = () => (
       ></Screen>
       <Screen name="Register" component={Register}></Screen>
       <Screen name="Plant" component={Plant}></Screen>
+      <Screen name="Block" component={Block}></Screen>
     </Navigator>
   </NavigationContainer>
 );
