@@ -34,6 +34,7 @@ const AppNavigator = () => (
       <Screen name="Register" component={Register}></Screen>
       <Screen name="Plant" component={Plant}></Screen>
       <Screen name="Block" component={Block}></Screen>
+      <Screen name="Watering" component={Block}></Screen>
     </Navigator>
   </NavigationContainer>
 );
