@@ -9,11 +9,15 @@ import {
 } from "react-native";
 
 interface BlockProps {
+  navigation: any;
   id: number;
+  onPress: () => void;
 }
 
 export default function Block(props: BlockProps) {
-  return <View style={styles.block} key={props.id}></View>;
+
+  
+  return <Pressable style={styles.block} key={props.id} onPress={props.onPress}></Pressable>;
 }
 
 const styles = StyleSheet.create({
