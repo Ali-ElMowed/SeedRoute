@@ -9,11 +9,12 @@ interface homeScreenProps {
 const Profile = (props: homeScreenProps) => {
   const goToSketch = () => props.navigation.navigate("Sketch");
   const goEditProfile = () => props.navigation.navigate("Sketch");
+  const goToBlock = () => props.navigation.navigate("Block");
 
     const arr:any = []
     for(let i = 0 ; i <10 ; i++){
         arr.push(
-            <Block id={i}/>
+            <Block navigation={"Block"} id={i} onPress={goToBlock}/>
         )
     }
   return (

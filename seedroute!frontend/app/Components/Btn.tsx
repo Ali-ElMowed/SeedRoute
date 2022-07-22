@@ -2,7 +2,6 @@ import React from "react";
 import { Text, View, StyleSheet, Pressable, Image, StyleProp } from "react-native";
 
 interface ButtonProps {
-  onPress: () => void;
   text: string;
   style: StyleProp<any>
 }
