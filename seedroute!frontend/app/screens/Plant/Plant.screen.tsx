@@ -10,6 +10,8 @@ const Plant = (props: homeScreenProps) => {
       <View >
         <Image source={require("../../../assets/images/potato.jpg")} style={styles.img}/>
         <Text style={styles.plant_name}>Potato</Text>
+        <Text style={styles.secTitle}>General Information</Text>
+        <Text style={styles.secTitle}>Recommendations</Text>
       </View>
     </ScrollView>
   );
@@ -29,6 +31,11 @@ const styles = StyleSheet.create({
         margin:20,
         fontSize:32,
         fontWeight:'bold'
+    },
+    secTitle:{
+        margin:10,
+        fontSize:20,
+        
     }
 })
 export default Plant;
