@@ -4,6 +4,8 @@ import { Text, View, StyleSheet, Pressable, Image, StyleProp } from "react-nativ
 interface ButtonProps {
   text: string;
   style: StyleProp<any>
+  onPress: () => void;
+
 }
 export default function Btn(props: ButtonProps) {
   //   const { onPress, title = 'Save' } = props;
