@@ -5,17 +5,19 @@ interface homeScreenProps {
   navigation: any;
 }
 const Block = (props: homeScreenProps) => {
-
+const goToWatering = () => props.navigation.navigate('Watering')
   return (
     <ScrollView>
       <View >
-        <Btn text="watering" onPress={goToWatering}/>
+        <Btn text="watering" onPress={goToWatering} style={styles.btn}/>
       </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-
+btn:{
+    
+}
 })
 export default Block;
