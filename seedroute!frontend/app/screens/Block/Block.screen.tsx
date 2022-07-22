@@ -17,7 +17,9 @@ const goToWatering = () => props.navigation.navigate('Watering')
 
 const styles = StyleSheet.create({
 btn:{
-    
+    marginTop:30,
+    width:200,
+    alignSelf:'center',
 }
 })
 export default Block;
