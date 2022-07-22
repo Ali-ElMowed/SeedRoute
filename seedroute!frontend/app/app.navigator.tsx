@@ -5,6 +5,7 @@ import LoginScreen from "./screens/login/login.screen";
 import Register from "./screens/register/Register.screen";
 import HomeScreen from "./screens/Home/Home.screen";
 import Sketch from "./screens/Sketch/Sketch.screen";
+import Plant from "./screens/Plant/Plant.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -30,6 +31,7 @@ const AppNavigator = () => (
         options={{ title: "Home" }}
       ></Screen>
       <Screen name="Register" component={Register}></Screen>
+      <Screen name="Plant" component={Plant}></Screen>
     </Navigator>
   </NavigationContainer>
 );
