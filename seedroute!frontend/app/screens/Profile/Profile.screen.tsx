@@ -21,9 +21,9 @@ const Profile = (props: homeScreenProps) => {
       <View >
         <View style={styles.header}>
             
-        <Image source={require('../../../assets/images/app-icon.jpg')} style={{width:70, height:70, borderRadius:100, margin:20, marginRight:0}}/>
+        <Image source={require('../../../assets/images/avatar.jpg')} style={{width:70, height:70, borderRadius:100, margin:20, marginRight:0}}/>
         <Text style={styles.userName}>User Name</Text>
-        <Btn text="Edit Profile" onPress={goEditProfile} style={styles.editProBtn}/>
+        <Btn text="Edit" onPress={goEditProfile} style={styles.editProBtn}/>
         </View>
         <Btn text="Edit Sketch" onPress={goToSketch} style={styles.editBtn}/>
         <View style={styles.container}>{arr}</View>
