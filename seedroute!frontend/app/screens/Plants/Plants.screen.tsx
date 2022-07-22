@@ -8,7 +8,6 @@ import {
   TextInput,
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faSearch, faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Btn from "../../Components/Btn";
 interface homeScreenProps {
