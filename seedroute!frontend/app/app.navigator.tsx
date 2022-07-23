@@ -30,7 +30,7 @@ const AppNavigator = () => (
       <Screen
         name="Home"
         component={HomeScreen}
-        options={{ title: "Home" }}
+        options={{ title: "Seed Route" }}
       ></Screen>
       <Screen name="Register" component={Register}></Screen>
       <Screen name="Plant" component={Plant}></Screen>
