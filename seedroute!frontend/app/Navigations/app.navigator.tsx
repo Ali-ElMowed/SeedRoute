@@ -8,10 +8,14 @@ import Sketch from "../screens/Sketch/Sketch.screen";
 import Plant from "../screens/Plant/Plant.screen";
 import Block from "../screens/Block/Block.screen";
 import Watering from "../screens/Watering/Watering.screen";
+import { useAppSelector } from "../redux/hooks";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const AppNavigator = () => (
+const AppNavigator = () => {
+  const user = useAppSelector(state=>state.user)
+  
+return (
   <NavigationContainer>
     <Navigator
       initialRouteName="login"
@@ -38,6 +42,6 @@ const AppNavigator = () => (
       <Screen name="Watering" component={Watering}></Screen>
     </Navigator>
   </NavigationContainer>
-);
+)};
 
 export default AppNavigator;
