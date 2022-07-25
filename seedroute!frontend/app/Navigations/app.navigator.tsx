@@ -1,13 +1,13 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import LoginScreen from "./screens/login/login.screen";
-import Register from "./screens/register/Register.screen";
-import HomeScreen from "./screens/Home/Home.screen";
-import Sketch from "./screens/Sketch/Sketch.screen";
-import Plant from "./screens/Plant/Plant.screen";
-import Block from "./screens/Block/Block.screen";
-import Watering from "./screens/Watering/Watering.screen";
+import LoginScreen from "../screens/login/login.screen";
+import Register from "../screens/register/Register.screen";
+import HomeScreen from "../screens/Home/Home.screen";
+import Sketch from "../screens/Sketch/Sketch.screen";
+import Plant from "../screens/Plant/Plant.screen";
+import Block from "../screens/Block/Block.screen";
+import Watering from "../screens/Watering/Watering.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

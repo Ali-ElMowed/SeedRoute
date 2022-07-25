@@ -1,9 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Profile from "./screens/Profile/Profile.screen";
-import Notifications from "./screens/Notification/Notification.screen";
-import Chats from "./screens/Chat/Chat.screen";
-import Plants from "./screens/Plants/Plants.screen";
+import Profile from "../screens/Profile/Profile.screen";
+import Notifications from "../screens/Notification/Notification.screen";
+import Chats from "../screens/Chat/Chat.screen";
+import Plants from "../screens/Plants/Plants.screen";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {faMessage, faSeedling, faBell,faTableCells } from '@fortawesome/free-solid-svg-icons';
 
