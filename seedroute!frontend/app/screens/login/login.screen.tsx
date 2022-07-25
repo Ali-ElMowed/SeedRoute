@@ -4,7 +4,7 @@ import { set } from "../../redux/slices/user";
 import { login } from "../../Api/auth"
 import { Text, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-native";
 import Btn from "../../Components/Btn";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from 'react-native';
 import 'localstorage-polyfill'; 
 
 
@@ -18,7 +18,6 @@ const LoginScreen = (props: loginScreenProps) => {
   const goToRegister = () => props.navigation.navigate("Register");
 
   const whenPressed = () => {
-    goHome()
     handleLogin()
   }
 
@@ -29,7 +28,9 @@ const LoginScreen = (props: loginScreenProps) => {
       try {
           const res = await login(email, password);
           dispatch( set(res?.data))
-          AsyncStorage.setItem("user", JSON.stringify(res?.data))
+          localStorage.setItem("user", JSON.stringify(res?.data))
+          if(res?.status === 200)
+            goHome
       } catch (error) {
           console.log(error);
       }
