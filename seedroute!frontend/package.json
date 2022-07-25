@@ -15,6 +15,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-native-fontawesome": "^0.3.0",
+    "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-firebase/app": "^15.2.0",
     "@react-native-firebase/auth": "^15.2.0",
@@ -43,8 +44,7 @@
     "react-native-web": "0.17.7",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
-    "tunnel": "^0.0.6",
-    "@react-native-async-storage/async-storage": "~1.17.3"
+    "tunnel": "^0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
