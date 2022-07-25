@@ -14,23 +14,23 @@ interface loginScreenProps {
 }
 
 const LoginScreen = (props: loginScreenProps) => {
-  const goHome = () => props.navigation.navigate("Home");
   const goToRegister = () => props.navigation.navigate("Register");
 
   const whenPressed = () => {
     handleLogin()
   }
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("ali@gmail.com");
+  const [password, setPassword] = useState("12345678");
   const dispatch = useDispatch()
   const handleLogin = async () => {
       try {
           const res = await login(email, password);
           dispatch( set(res?.data))
           localStorage.setItem("user", JSON.stringify(res?.data))
-          if(res?.status === 200)
-            goHome
+          if(res?.status === 200){
+            props.navigation.navigate("Home")
+          }
       } catch (error) {
           console.log(error);
       }
