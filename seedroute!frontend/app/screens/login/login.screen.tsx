@@ -4,6 +4,8 @@ import { set } from "../../redux/slices/user";
 import { login } from "../../Api/auth"
 import { Button, Text, View, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-native";
 import Btn from "../../Components/Btn";
+import 'localstorage-polyfill'; 
+
 
 interface loginScreenProps {
   navigation: any;
@@ -15,8 +17,8 @@ const LoginScreen = (props: loginScreenProps) => {
   const goToRegister = () => props.navigation.navigate("Register");
 
   const whenPressed = () => {
-    goHome
-    handleLogin
+    goHome()
+    handleLogin()
   }
 
   const [email, setEmail] = useState("");
@@ -70,7 +72,8 @@ const styles = StyleSheet.create ({
      borderColor: 'white',
      borderRadius: 6,
      padding:5,
-     backgroundColor: 'white'
+     backgroundColor: 'white',
+     paddingLeft:20
      
   },
   passwordInput:{
@@ -80,7 +83,9 @@ const styles = StyleSheet.create ({
     borderColor: 'white',
     borderRadius: 6,
     padding:5,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    paddingLeft:20
+
   },
   view:{
     backgroundColor: '#0D9B81'
