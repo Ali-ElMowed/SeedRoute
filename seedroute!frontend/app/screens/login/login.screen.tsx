@@ -16,9 +16,7 @@ interface loginScreenProps {
 const LoginScreen = (props: loginScreenProps) => {
   const goToRegister = () => props.navigation.navigate("Register");
 
-  const whenPressed = () => {
-    handleLogin()
-  }
+  
 
   const [email, setEmail] = useState("ali@gmail.com");
   const [password, setPassword] = useState("12345678");
@@ -55,7 +53,7 @@ const LoginScreen = (props: loginScreenProps) => {
       />
         
       <Btn
-        onPress={whenPressed}
+        onPress={handleLogin}
         text={"Login"}
         style={styles.btn}
       />
