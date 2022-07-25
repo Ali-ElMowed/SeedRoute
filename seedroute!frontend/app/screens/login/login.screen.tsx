@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { set } from "../../redux/slices/user";
 import { login } from "../../Api/auth"
-import { Button, Text, View, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-native";
+import { Text, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-native";
 import Btn from "../../Components/Btn";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import 'localstorage-polyfill'; 
 
 
@@ -28,7 +29,7 @@ const LoginScreen = (props: loginScreenProps) => {
       try {
           const res = await login(email, password);
           dispatch( set(res?.data))
-          localStorage.setItem("user", JSON.stringify(res?.data))
+          AsyncStorage.setItem("user", JSON.stringify(res?.data))
       } catch (error) {
           console.log(error);
       }
