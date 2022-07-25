@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, } from "react";
 import {
   Text,
   View,
@@ -10,11 +10,29 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Btn from "../../Components/Btn";
+import { plants } from "../../Api/plants";
 interface homeScreenProps {
   navigation: any;
 }
 const Plants = (props: homeScreenProps) => {
   const goInfo = () => props.navigation.navigate('Plant');
+
+  // const { id } = useParams();
+
+    const [_plants, setPlants] = useState([]);
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const allPlants = await plants()
+                setPlants(allPlants?.data.data)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getData()
+    }, [])
+
+
   return (
     <ScrollView>
       <View style={styles.search_bar}>
@@ -25,58 +43,21 @@ const Plants = (props: homeScreenProps) => {
         <FontAwesomeIcon icon={faSearch} style={styles.icon} />
       </View>
       <View style={styles.container}>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
-        <View style={styles.plant_card}>
-          <Image
-            source={require("../../../assets/images/symbol1.jpg")}
-            style={styles.plant_img}
-          />
-          <Text style={styles.plant_name}>Plant Name</Text>
-          <Btn text="Info" style={styles.btn} onPress={goInfo} />
-        </View>
+        {_plants?.map((plant: any)=>( 
+          
+           <View style={styles.plant_card}>
+            <Image
+              source={require("../../../assets/images/symbol1.jpg")}
+              style={styles.plant_img}
+            />
+            <Text style={styles.plant_name}>{plant?.name}</Text>
+            <Btn text="Info" style={styles.btn} onPress={goInfo} />
+          </View>
+          ))}
       </View>
     </ScrollView>
   );
-};
+};``
 
 const styles = StyleSheet.create({
   icon: {
