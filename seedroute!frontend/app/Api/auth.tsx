@@ -12,3 +12,11 @@ export const login = async (email: string, password: string) => {
     })
     return res
 }
+export const register = async (props: loginProps) => {
+    const res = axios.post("http://localhost:8000/api/register", {
+        name: props.name,
+        email: props.email,
+        password: props.password
+    })
+    return res
+}
