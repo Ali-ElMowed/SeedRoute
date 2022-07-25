@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Text, View } from "react-native";
-import BottomTabNavigator from "../../bottomTab.navigator";
+import BottomTabNavigator from "../../Navigations/bottomTab.navigator";
 
 interface loginScreenProps {
   navigation: any;
