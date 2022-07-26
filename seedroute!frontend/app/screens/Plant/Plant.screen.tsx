@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
+import { getPlantById } from "../../Api/plants";
 interface homeScreenProps {
   navigation: any;
+  id: number
 }
 const Plant = (props: homeScreenProps) => {
+
+  const [_plant, setPlant] = useState(null);
+  
+    useEffect(() => {
+        const getData = async (id:number) => {
+            try {
+                const plantById = await getPlantById(1 )
+                setPlant(plantById?.data.name)
+                console.log(plantById);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getData(props.id)
+    }, [])
 
   return (
     <ScrollView>
       <View >
         <Image source={require("../../../assets/images/potato.jpg")} style={styles.img}/>
-        <Text style={styles.plant_name}>Potato</Text>
+        <Text style={styles.plant_name}>potato</Text>
         <Text style={styles.secTitle}>General Information</Text>
         <Text style={styles.secTitle}>Recommendations</Text>
       </View>
