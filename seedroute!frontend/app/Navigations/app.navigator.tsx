@@ -9,10 +9,15 @@ import Plant from "../screens/Plant/Plant.screen";
 import Block from "../screens/Block/Block.screen";
 import Watering from "../screens/Watering/Watering.screen";
 import { useAppSelector } from "../redux/hooks";
+import Advisors from "../screens/Advisors/Advisors.screen";
+import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const AppNavigator = () => {
+interface appNavProps {
+  id: number
+}
+const AppNavigator = (props: appNavProps) => {
   const user = useAppSelector(state=>state.user)
   
 return (
@@ -40,6 +45,8 @@ return (
       <Screen name="Plant" component={Plant}></Screen>
       <Screen name="Block" component={Block}></Screen>
       <Screen name="Watering" component={Watering}></Screen>
+      <Screen name="Advisors" component={Advisors}></Screen>
+      <Screen name="ChatRoom" component={ChatRoom}></Screen>
     </Navigator>
   </NavigationContainer>
 )};
