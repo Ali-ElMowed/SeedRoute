@@ -30,7 +30,8 @@ const LoginScreen = (props: loginScreenProps) => {
             props.navigation.navigate("Home")
           }
       } catch (error) {
-          console.log(error);
+          console.log(error );
+          alert('Uncorrect Email or Password')
       }
 
   };
