@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Button, Text, View, ScrollView, TextInput,StyleSheet,Image } from "react-native";
+import { View, ScrollView, TextInput,StyleSheet,Image } from "react-native";
+import { useDispatch } from "react-redux";
+import { register } from "../../Api/auth";
 import Btn from "../../Components/Btn";
+import { set } from "../../redux/slices/user";
+
 
 interface RegisterScreenProps {
     navigation: any;
@@ -8,12 +12,29 @@ interface RegisterScreenProps {
   
   const Register = (props: RegisterScreenProps) => {
   
-    const goSketch = () => props.navigation.navigate("Sketch");
+    // const goSketch = () => props.navigation.navigate("Sketch");
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [verifyPassword, setVerifyPassword] = useState("");
+
+    const dispatch = useDispatch()
+
+
+    const handleRegister = async () => {
+      try {
+
+          const res = await register(fname+""+lname, email, password,verifyPassword);          
+          dispatch(set(res?.data))
+          localStorage.setItem("user", JSON.stringify(res?.data))
+          props.navigation.navigate("Sketch")
+          
+      } catch (error) {
+          console.log(error);
+      }
+
+  };
   
     return (
       <ScrollView style={styles.main}>
@@ -54,7 +75,7 @@ interface RegisterScreenProps {
          style={[styles.passwordInput,styles.input]}
          />
          <Btn 
-         onPress={goSketch}
+         onPress={handleRegister}
          text={"Register"}
          style={styles.btn}/>
          </View>
