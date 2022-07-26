@@ -51,7 +51,7 @@ const Plants = (props: homeScreenProps) => {
               style={styles.plant_img}
             />
             <Text style={styles.plant_name}>{plant?.name}</Text>
-            <Btn text="Info" style={styles.btn} onPress={goInfo(plant?.id)} />
+            <Btn text="Info" style={styles.btn} onPress={()=>{goInfo(plant?.id)}} />
           </View>
           ))}
       </View>
