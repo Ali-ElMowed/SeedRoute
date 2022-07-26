@@ -15,7 +15,7 @@ interface homeScreenProps {
   navigation: any;
 }
 const Plants = (props: homeScreenProps) => {
-  const goInfo = () => props.navigation.navigate('Plant');
+  const goInfo = (id : number) => props.navigation.navigate('Plant',{id});
 
   // const { id } = useParams();
 
@@ -51,7 +51,7 @@ const Plants = (props: homeScreenProps) => {
               style={styles.plant_img}
             />
             <Text style={styles.plant_name}>{plant?.name}</Text>
-            <Btn text="Info" style={styles.btn} onPress={goInfo} />
+            <Btn text="Info" style={styles.btn} onPress={goInfo(plant?.id)} />
           </View>
           ))}
       </View>
