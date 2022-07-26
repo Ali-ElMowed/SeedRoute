@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 import { getPlantById } from "../../Api/plants";
@@ -6,15 +7,16 @@ interface homeScreenProps {
   id: number
 }
 const Plant = (props: homeScreenProps) => {
-
-  const [_plant, setPlant] = useState(null);
+  const route  = useRoute()
+  
+  const [_plant, setPlant]:any = useState(null);
   
     useEffect(() => {
         const getData = async (id:number) => {
             try {
-                const plantById = await getPlantById(1 )
-                setPlant(plantById?.data.name)
-                console.log(plantById);
+                const {id}:any = route.params
+                const plantById = await getPlantById(id)                
+                setPlant(plantById?.data?.data)
                 
             } catch (error) {
                 console.log(error);
@@ -27,7 +29,7 @@ const Plant = (props: homeScreenProps) => {
     <ScrollView>
       <View >
         <Image source={require("../../../assets/images/potato.jpg")} style={styles.img}/>
-        <Text style={styles.plant_name}>potato</Text>
+        <Text style={styles.plant_name}>{_plant?.name}</Text>
         <Text style={styles.secTitle}>General Information</Text>
         <Text style={styles.secTitle}>Recommendations</Text>
       </View>
