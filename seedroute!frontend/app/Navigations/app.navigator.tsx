@@ -14,16 +14,15 @@ import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-interface appNavProps {
-  id: number
-}
-const AppNavigator = (props: appNavProps) => {
+
+const AppNavigator = () => {
   const user = useAppSelector(state=>state.user)
   
 return (
   <NavigationContainer>
     <Navigator
       initialRouteName="login"
+      
       screenOptions={{
         headerStyle: {
           backgroundColor: "#0D9B81",
@@ -33,6 +32,7 @@ return (
           fontWeight: "bold",
         },
       }}
+      
     >
       <Screen name="Login" component={LoginScreen}></Screen>
       <Screen name="Sketch" component={Sketch}></Screen>
