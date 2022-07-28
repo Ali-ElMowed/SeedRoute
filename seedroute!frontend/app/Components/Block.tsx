@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -9,15 +9,24 @@ import {
 } from "react-native";
 
 interface BlockProps {
-  navigation: any;
   id: number;
-  onPress: () => void;
+  // onPress: () => void;
 }
 
 export default function Block(props: BlockProps) {
 
+  const [blockStyles, SetBlockStyles] : any = useState(styles.block)
+
+  const blockStyle = () =>{
+    if(blockStyles === styles.block){
+      SetBlockStyles(styles.block1)
+    }else{
+      SetBlockStyles(styles.block)
+
+    }
+  }
   
-  return <Pressable style={styles.block} key={props.id} onPress={props.onPress}></Pressable>;
+  return <Pressable style={blockStyles} key={props.id} onPress={blockStyle}></Pressable>;
 }
 
 const styles = StyleSheet.create({
@@ -25,6 +34,15 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     backgroundColor: "#7DDCCA",
+    margin: 6,
+    borderRadius: 5,
+    borderWidth:1,
+    borderColor:'#ffff'
+  },
+  block1: {
+    width: 70,
+    height: 70,
+    backgroundColor: "#39F34B",
     margin: 6,
     borderRadius: 5,
     borderWidth:1,
