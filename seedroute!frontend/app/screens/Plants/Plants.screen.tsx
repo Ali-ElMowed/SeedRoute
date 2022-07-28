@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   TextInput,
+  Pressable,
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faSeedling } from "@fortawesome/free-solid-svg-icons";
@@ -45,14 +46,13 @@ const Plants = (props: homeScreenProps) => {
       <View style={styles.container}>
         {_plants?.map((plant: any)=>( 
           
-           <View style={styles.plant_card}>
+           <Pressable style={styles.plant_card} onPress={()=>{goInfo(plant?.id)}}>
             <Image
               source={require("../../../assets/images/symbol1.jpg")}
               style={styles.plant_img}
             />
             <Text style={styles.plant_name}>{plant?.name}</Text>
-            <Btn text="Info" style={styles.btn} onPress={()=>{goInfo(plant?.id)}} />
-          </View>
+          </Pressable>
           ))}
       </View>
     </ScrollView>
