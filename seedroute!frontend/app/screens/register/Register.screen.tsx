@@ -40,20 +40,18 @@ interface RegisterScreenProps {
       <ScrollView style={styles.main}>
         <View style={styles.container}>
         <Image source={require("../../../assets/images/app-icon.jpg")} style={styles.img} />
-        <View style={styles.name}>
         <TextInput
           onChangeText={setFname}
           value={fname}
           placeholder={"First Name"}
-          style={[styles.passwordInput,styles.nameinput]}
+          style={[styles.passwordInput,styles.input]}
           />
         <TextInput
           onChangeText={setLname}
           value={lname}
           placeholder={"Last Name"}
-          style={[styles.passwordInput,styles.nameinput]}
+          style={[styles.passwordInput,styles.input]}
         />
-        </View>
         <TextInput
          onChangeText={setEmail}
          value={email}
@@ -112,23 +110,26 @@ interface RegisterScreenProps {
         width:200,
         height:200,
         margin:100,
-        marginTop:50
+        marginTop:50,
+        marginBottom:50
       },
       input:{
-        width:300
+        width:300,
+        paddingLeft:20
       },
-      nameinput:{
-        marginLeft:5,
-        marginRight:5,
-        width:145
-      },
+      // nameinput:{
+      //   marginLeft:5,
+      //   marginRight:5,
+      //   width:145
+      // },
       btn:{
         backgroundColor: '#0D9B81',
         borderColor: 'white',
         borderWidth:2,
         marginLeft:100,
         marginRight:100,
-        color: '#0D9B81'
+        color: '#0D9B81',
+        width: 300
       }
 
   })
