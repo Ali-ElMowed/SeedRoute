@@ -2,6 +2,7 @@ import { useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 import { getPlantById } from "../../Api/plants";
+import Loading from "../../Components/Loading";
 interface homeScreenProps {
   navigation: any;
   id: number;
@@ -26,6 +27,9 @@ const Plant = (props: homeScreenProps) => {
 
   return (
     <ScrollView>
+      {
+        _plant ? <>
+        
       <View style={styles.container}>
         <Image
           source={require("../../../assets/images/potato.jpeg")}
@@ -48,7 +52,8 @@ const Plant = (props: homeScreenProps) => {
             Watering {_plant?.watering} per week
           </Text>
         </View>
-      </View>
+      </View></> : <Loading/>
+      }
     </ScrollView>
   );
 };
