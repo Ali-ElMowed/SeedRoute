@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faSeedling } from "@fortawesome/free-solid-svg-icons";
 import Btn from "../../Components/Btn";
 import { plants } from "../../Api/plants";
+import Loading from "../../Components/Loading";
 interface homeScreenProps {
   navigation: any;
 }
@@ -35,7 +36,9 @@ const Plants = (props: homeScreenProps) => {
 
 
   return (
+    
     <ScrollView>
+      {_plants ? <>
       <View style={styles.search_bar}>
         <TextInput
           placeholder="Search for a Plant"
@@ -55,6 +58,7 @@ const Plants = (props: homeScreenProps) => {
           </Pressable>
           ))}
       </View>
+     </> : <Loading/>}
     </ScrollView>
   );
 };``
