@@ -12,12 +12,10 @@ interface homeScreenProps {
   navigation: any;
 }
 const Chats = (props: homeScreenProps) => {
-  const goAskAdv = () => props.navigation.navigate("Advisors");
   const goToChat = () => props.navigation.navigate("ChatRoom");
   return (
     <ScrollView>
       <View >
-        <Btn text="Ask Advisor" style={styles.btn} onPress={goAskAdv} />
         <Pressable onPress={goToChat} style={styles.chatBar}>
           <Image
             source={require("../../../assets/images/avatar.jpg")}
