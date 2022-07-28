@@ -16,6 +16,7 @@ const Advisors = (props: homeScreenProps) => {
 
   return (
     <View style={styles.container}>
+      <Btn text="create a room" style={styles.btn} onPress={()=>props.navigation.navigate("AddRoom")}/>
       <Pressable style={styles.advisor_card}>
         <Image
           source={require("../../../assets/images/avatar.jpg")}
@@ -62,5 +63,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontWeight: "bold",
   },
+  btn:{
+
+  }
 });
 export default Advisors;
