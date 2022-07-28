@@ -45,7 +45,6 @@ return (
       <Screen name="Plant" component={Plant}></Screen>
       <Screen name="Block" component={Block}></Screen>
       <Screen name="Watering" component={Watering}></Screen>
-      <Screen name="Advisors" component={Advisors}></Screen>
       <Screen name="ChatRoom" component={ChatRoom}></Screen>
     </Navigator>
   </NavigationContainer>
