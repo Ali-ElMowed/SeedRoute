@@ -11,6 +11,7 @@ import Watering from "../screens/Watering/Watering.screen";
 import { useAppSelector } from "../redux/hooks";
 import Advisors from "../screens/Advisors/Advisors.screen";
 import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
+import AddRoom from "../screens/AddRoom/AddRoom.Screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -46,6 +47,7 @@ return (
       <Screen name="Block" component={Block}></Screen>
       <Screen name="Watering" component={Watering}></Screen>
       <Screen name="ChatRoom" component={ChatRoom}></Screen>
+      <Screen name="AddRoom" component={AddRoom}></Screen>
     </Navigator>
   </NavigationContainer>
 )};
