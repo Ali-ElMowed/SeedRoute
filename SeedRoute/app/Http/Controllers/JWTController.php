@@ -39,10 +39,13 @@ class JWTController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return response()->json([
-            'message' => 'User successfully registered',
-            'user' => $user
-        ], 201);
+        if (!$token = auth()->attempt($validator->validated())) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+
+        return $this->respondWithToken($token);
+
     }
 
     /**
@@ -110,6 +113,7 @@ class JWTController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
+            'user' => auth()->user(),
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
