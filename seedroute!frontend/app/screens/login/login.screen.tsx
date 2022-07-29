@@ -6,6 +6,7 @@ import { Text, Image, TextInput, StyleSheet,ScrollView,Pressable } from "react-n
 import Btn from "../../Components/Btn";
 // import AsyncStorage from 'react-native';
 import 'localstorage-polyfill'; 
+import Loading from "../../Components/Loading";
 
 
 interface loginScreenProps {
@@ -17,12 +18,14 @@ const LoginScreen = (props: loginScreenProps) => {
   const goToRegister = () => props.navigation.navigate("Register");
 
   
+  const [loading,setLoading] = useState(false)
 
   const [email, setEmail] = useState("alimowed@gmail.com");
   const [password, setPassword] = useState("12345678");
   const dispatch = useDispatch()
   const handleLogin = async () => {
       try {
+          setLoading(true)
           const res = await login(email, password);
           dispatch( set(res?.data))
           localStorage.setItem("user", JSON.stringify(res?.data))
@@ -32,6 +35,8 @@ const LoginScreen = (props: loginScreenProps) => {
       } catch (error) {
           console.log(error );
           alert('Uncorrect Email or Password')
+      } finally{
+          setLoading(false)
       }
 
   };
@@ -52,7 +57,9 @@ const LoginScreen = (props: loginScreenProps) => {
         placeholder={"Enter your password"}
         style={styles.passwordInput}
       />
-        
+     {
+      loading && <Loading/>
+     }   
       <Btn
         onPress={handleLogin}
         text={"Login"}
