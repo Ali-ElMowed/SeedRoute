@@ -22,7 +22,7 @@ const Chats = (props: homeScreenProps) => {
             style={styles.avatar}
           />
           <View>
-            <Text style={styles.uname}>User Name</Text>
+            <Text style={styles.uname}>John Doe</Text>
             <Text style={styles.lmsg}>Hey, how are you doing?</Text>
           </View>
         </Pressable>
