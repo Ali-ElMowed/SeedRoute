@@ -17,7 +17,7 @@ interface BlockProps {
 export default function Block(props: BlockProps) {
 
   
-  return <Pressable style={props.value==0?styles.block:styles.block1} onPress={props.onClick}></Pressable>;
+  return <Pressable style={props.value==0?styles.block:styles.block1} onPress={props.onClick}/>;
 }
 
 const styles = StyleSheet.create({
