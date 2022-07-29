@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
 import { View, ScrollView, TextInput,StyleSheet,Image } from "react-native";
 import { useDispatch } from "react-redux";
@@ -29,7 +30,7 @@ interface RegisterScreenProps {
           console.log(res);
               
           dispatch(set(res?.data))
-          localStorage.setItem("user", JSON.stringify(res?.data))
+          const user = await AsyncStorage.setItem('user',JSON.stringify(res?.data))
           props.navigation.navigate("Sketch")
           
       } catch (error) {
