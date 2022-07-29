@@ -18,6 +18,7 @@ interface homeScreenProps {
 }
 const Plants = (props: homeScreenProps) => {
   const goInfo = (id : number) => props.navigation.navigate('Plant',{id});
+  const [loading,setLoading] = useState(false)
 
   // const { id } = useParams();
 
@@ -25,10 +26,13 @@ const Plants = (props: homeScreenProps) => {
     useEffect(() => {
         const getData = async () => {
             try {
+                setLoading(true)
                 const allPlants = await plants()
                 setPlants(allPlants?.data.data)
             } catch (error) {
                 console.log(error);
+            } finally{
+                setLoading(false)
             }
         }
         getData()
@@ -38,7 +42,6 @@ const Plants = (props: homeScreenProps) => {
   return (
     
     <ScrollView>
-      {_plants ? <>
       <View style={styles.search_bar}>
         <TextInput
           placeholder="Search for a Plant"
@@ -46,6 +49,9 @@ const Plants = (props: homeScreenProps) => {
         />
         <FontAwesomeIcon icon={faSearch} style={styles.icon} />
       </View>
+
+      {loading?<Loading/>
+      :_plants?<>
       <View style={styles.container}>
         {_plants?.map((plant: any)=>( 
           
@@ -58,7 +64,7 @@ const Plants = (props: homeScreenProps) => {
           </Pressable>
           ))}
       </View>
-     </> : <Loading/>}
+     </> : <Text>No Plants Found</Text>}
     </ScrollView>
   );
 };``
