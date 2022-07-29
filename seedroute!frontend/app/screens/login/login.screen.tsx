@@ -18,7 +18,7 @@ const LoginScreen = (props: loginScreenProps) => {
 
   
 
-  const [email, setEmail] = useState("ali@gmail.com");
+  const [email, setEmail] = useState("alimowed@gmail.com");
   const [password, setPassword] = useState("12345678");
   const dispatch = useDispatch()
   const handleLogin = async () => {
