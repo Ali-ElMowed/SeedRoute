@@ -7,6 +7,7 @@ import Btn from "../../Components/Btn";
 // import AsyncStorage from 'react-native';
 import 'localstorage-polyfill'; 
 import Loading from "../../Components/Loading";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 interface loginScreenProps {
@@ -28,7 +29,9 @@ const LoginScreen = (props: loginScreenProps) => {
           setLoading(true)
           const res = await login(email, password);
           dispatch( set(res?.data))
-          localStorage.setItem("user", JSON.stringify(res?.data))
+          // await localStorage.setItem("user", JSON.stringify(res?.data))
+          const user = await AsyncStorage.setItem('user',JSON.stringify(res?.data))
+
           if(res?.status === 200){
             props.navigation.navigate("Home")
           }
