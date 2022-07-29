@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class BlockController extends Controller
 {
 
-    /* 
+    /*
     Discription : Get All Blocks Api
     @response blocks collection
     */
@@ -44,26 +44,41 @@ class BlockController extends Controller
             foreach ($request->selected_blocks as $block) {
                 if ($block['value']) {
                     $data[] = [
-                        'user_id' => auth()->id(),
+                        'user_id' => auth()->user()->id,
                         'name' => $block['name'],
                         'block_id' => $block['name'],
                     ];
                 }
             }
-            BlockSelected::insert($data);
 
-            return jsonResponse('success', 201);
+            BlockSelected::insert($data);
+            return jsonResponse('success', 201,$data);
+
         } catch (Exception $e) {
             return jsonResponse('error', 500, [$e->getMessage()]);
         }
     }
 
-    public function getSelectedBlocks()
+    // public function getSelectedBlocks()
+    // {
+    //     try {
+    //        $selected_blocks = auth()->user()->blocks_selected->blocks;
+    //        return jsonResponse('success', 200, $selected_blocks);
+
+    //     } catch (Exception $e) {
+    //         return jsonResponse('error', 500, [$e->getMessage()]);
+    //     }
+    // }
+
+    public function getSelectedBlocks($id = null)
     {
-        try {
-            $selected_blocks = auth()->user()->blocks_selected->blocks;
-        } catch (Exception $e) {
-            return jsonResponse('error', 500, [$e->getMessage()]);
+        $user = auth()->user()->id;
+        if ($id != null) {
+            $blocks = BlockSelected::find($id);
+        } else {
+            $blocks = BlockSelected::select('name')->where("user_id",$user)->get();
         }
+
+        return jsonResponse("blocks found", 200, $blocks);
     }
 }
