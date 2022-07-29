@@ -32,11 +32,11 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::post('/profile', [JWTController::class, 'profile']);
 
     //Plants routes
-    Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
+
     Route::post('/addPlant', [PlantController::class, 'addPlant']);
     Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
-    Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
-
+    Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);  
+    Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
 
     //Calendars routes
     Route::get('/getCalendars/{id?}', [CalendarController::class, 'getCalendars']);
@@ -47,4 +47,5 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
     //blocks
     Route::get('getBlocks', [BlockController::class, 'getBlocks']);
     Route::post('storeBlocksSelected', [BlockController::class, 'storeBlocks']);
+    Route::get('getSelectedBlocks/{id?}', [BlockController::class, 'getSelectedBlocks']);
 });
