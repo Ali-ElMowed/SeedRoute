@@ -89,10 +89,9 @@ const styles = StyleSheet.create({
     borderColor:"#0D9B81"
   },
   plant_card: {
-    borderWidth: 2,
     padding: 20,
-    width: 170,
-    margin: 10,
+    width: 160,
+    margin: 5,
     borderRadius: 6,
     backgroundColor: "white",
     borderColor: "#0D9B81",
@@ -102,7 +101,6 @@ const styles = StyleSheet.create({
     height: 100,
     alignSelf: "center",
     borderColor:"#0D9B81",
-    borderWidth:1,
     borderRadius:6
   },
   btn: {
@@ -113,6 +111,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flexWrap: "wrap",
+    marginLeft: 15
   },
   plant_name: {
     textAlign: "center",
