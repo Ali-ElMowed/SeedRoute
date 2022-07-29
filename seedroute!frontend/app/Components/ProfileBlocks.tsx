@@ -9,27 +9,20 @@ import {
 } from "react-native";
 
 interface BlockProps {
-  id: number;
-  onPress: () => void;
+  name: number
+  value: number
+  onPress: () => void
 }
 
 export default function ProfileBlocks(props: BlockProps) {
   const [blockStyles, SetBlockStyles]: any = useState(styles.block);
 
-  const blockStyle = () => {
-    if (blockStyles === styles.block) {
-      SetBlockStyles(styles.block1);
-    } else {
-      SetBlockStyles(styles.block);
-    }
-  }
 
   return (
     <Pressable
-      style={blockStyles}
-      key={props.id}
+      style={props.value==0?styles.block:styles.block1}
       onPress={props.onPress}
-    ></Pressable>
+    />
   );
 }
 
@@ -42,11 +35,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#ffff",
+    opacity:0.3
   },
   block1: {
     width: 70,
     height: 70,
-    backgroundColor: "#39F34B",
+    backgroundColor: "#7DDCCA",
     margin: 6,
     borderRadius: 5,
     borderWidth: 1,
