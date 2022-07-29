@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 import Block from "../../Components/Block";
 import Btn from "../../Components/Btn";
+import ProfileBlocks from "../../Components/ProfileBlocks";
 
 interface homeScreenProps {
   navigation: any;
@@ -19,10 +20,9 @@ const Profile = (props: homeScreenProps) => {
     const arr:any = []
     for(let i = 0 ; i <10 ; i++){
         arr.push(
-            <Block
-            //  navigation={"Block"}
+            <ProfileBlocks
              id={i}
-              // onPress={ goToBlock}
+              onPress={ goToBlock}
               />
         )
     }
