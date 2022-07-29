@@ -22,10 +22,40 @@ const Advisors = (props: homeScreenProps) => {
           source={require("../../../assets/images/avatar.jpg")}
           style={styles.advisor_img}
         />
-        <Text style={styles.advisor_name}>Advisor name</Text>
+        <Text style={styles.advisor_name}>John Doe</Text>
         <Text style={styles.advisor_ex}>Expreience: 10 years</Text>
         <Text style={styles.advisor_ex}>Job: agriculture engineer</Text>
         <Text style={styles.advisor_ex}>Bio: Some Bio</Text>
+      </Pressable>
+      <Pressable style={styles.advisor_card}>
+        <Image
+          source={require("../../../assets/images/avatar.jpg")}
+          style={styles.advisor_img}
+        />
+        <Text style={styles.advisor_name}>Nour Maher</Text>
+        <Text style={styles.advisor_ex}>Expreience: 5 years</Text>
+        <Text style={styles.advisor_ex}>Job: Software engineer</Text>
+        <Text style={styles.advisor_ex}>Bio: Some Bio</Text>
+      </Pressable>
+      <Pressable style={styles.advisor_card}>
+        <Image
+          source={require("../../../assets/images/avatar.jpg")}
+          style={styles.advisor_img}
+        />
+        <Text style={styles.advisor_name}>Saeed Saeed</Text>
+        <Text style={styles.advisor_ex}>Expreience: 6 years</Text>
+        <Text style={styles.advisor_ex}>Job: Waiter</Text>
+        <Text style={styles.advisor_ex}>Bio: Flower lover</Text>
+      </Pressable>
+      <Pressable style={styles.advisor_card}>
+        <Image
+          source={require("../../../assets/images/avatar.jpg")}
+          style={styles.advisor_img}
+        />
+        <Text style={styles.advisor_name}>Daniel Dany</Text>
+        <Text style={styles.advisor_ex}>Expreience: 2 years</Text>
+        <Text style={styles.advisor_ex}>Job: Dentist</Text>
+        <Text style={styles.advisor_ex}>Bio: Planter</Text>
       </Pressable>
     </View>
   );
