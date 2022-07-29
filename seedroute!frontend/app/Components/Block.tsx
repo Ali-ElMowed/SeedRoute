@@ -9,24 +9,15 @@ import {
 } from "react-native";
 
 interface BlockProps {
-  id: number;
-  // onPress: () => void;
+  name: number
+  value: number
+  onClick:()=>void
 }
 
 export default function Block(props: BlockProps) {
 
-  const [blockStyles, SetBlockStyles] : any = useState(styles.block)
-
-  const blockStyle = () =>{
-    if(blockStyles === styles.block){
-      SetBlockStyles(styles.block1)
-    }else{
-      SetBlockStyles(styles.block)
-
-    }
-  }
   
-  return <Pressable style={blockStyles} key={props.id} onPress={blockStyle}></Pressable>;
+  return <Pressable style={props.value==0?styles.block:styles.block1} onPress={props.onClick}></Pressable>;
 }
 
 const styles = StyleSheet.create({
