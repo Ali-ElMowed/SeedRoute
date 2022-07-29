@@ -12,7 +12,7 @@ interface homeScreenProps {
 }
 
 const Sketch = (props: homeScreenProps) => {
-  const myLand = () => props.navigation.navigate("Home");
+  const myLand = () => props.navigation.replace("Home");
   const [loading,setLoading] = useState(false)
   const [blocks, setBlocks]: any = useState([
     {
