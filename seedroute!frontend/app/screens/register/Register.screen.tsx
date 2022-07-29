@@ -13,11 +13,11 @@ interface RegisterScreenProps {
   const Register = (props: RegisterScreenProps) => {
   
     // const goSketch = () => props.navigation.navigate("Sketch");
-    const [fname, setFname] = useState("");
-    const [lname, setLname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [verifyPassword, setVerifyPassword] = useState("");
+    const [fname, setFname] = useState("test");
+    const [lname, setLname] = useState("test");
+    const [email, setEmail] = useState("test@gmail.com");
+    const [password, setPassword] = useState("12345678");
+    const [verifyPassword, setVerifyPassword] = useState("12345678");
 
     const dispatch = useDispatch()
 
@@ -25,7 +25,9 @@ interface RegisterScreenProps {
     const handleRegister = async () => {
       try {
 
-          const res = await register(fname+""+lname, email, password,verifyPassword);          
+          const res = await register(fname+""+lname, email, password,verifyPassword);      
+          console.log(res);
+              
           dispatch(set(res?.data))
           localStorage.setItem("user", JSON.stringify(res?.data))
           props.navigation.navigate("Sketch")
@@ -61,6 +63,7 @@ interface RegisterScreenProps {
         <TextInput
          textContentType="password"
          onChangeText={setPassword}
+         secureTextEntry
          value={password}
          placeholder={"Password"}
          style={[styles.passwordInput,styles.input]}
@@ -69,6 +72,7 @@ interface RegisterScreenProps {
          textContentType="password"
          onChangeText={setVerifyPassword}
          value={verifyPassword}
+         secureTextEntry
          placeholder={"Verify Password"}
          style={[styles.passwordInput,styles.input]}
          />
