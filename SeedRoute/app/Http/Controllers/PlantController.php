@@ -19,7 +19,7 @@ class PlantController extends Controller
         return jsonResponse("plants found", 200, $plants);
     }
 
-    //function to add plant 
+    //function to add plant
     public function addPlant(Request $request)
     {
         $plant = new Plant;
@@ -32,10 +32,16 @@ class PlantController extends Controller
         $plant->number_of_phases = $request->number_of_phases;
         $plant->save();
 
+        // second method //recommended
+        if ($request->file('plant_image') !== null) {
+            $path = $request->file('plant_image')->store('uploads', 'public');
+            $plant->update(['plant_image' => $path]);
+        }
+
         return jsonResponse("plant added", 200);
     }
 
-    //function to delete plant 
+    //function to delete plant
     public function destroyPlant($id)
     {
 
