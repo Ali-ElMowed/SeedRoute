@@ -45,27 +45,31 @@ class User extends Authenticatable implements JWTSubject
     ];
 
     // Every user has many blocks (relation)
-    public function block(){
-        return $this->hasMany(Block::class,'user_id');
+    public function block()
+    {
+        return $this->hasMany(BlockSelected::class, 'user_id');
     }
 
     //Every user could be an advisor (relation)
-    public function advisor(){
-        return $this->hasOne(Advisor::class,'user_id');
+    public function advisor()
+    {
+        return $this->hasOne(Advisor::class, 'user_id');
     }
 
     //Every user has many "sent messages"
-    public function chatsent(){
-        return $this->hasMany(Chat::class,'sender_id');
+    public function chatsent()
+    {
+        return $this->hasMany(Chat::class, 'sender_id');
     }
 
     //Every user has many "recived messages"
-    public function chatrecived(){
-        return $this->hasMany(Chat::class,'reciver_id');
+    public function chatrecived()
+    {
+        return $this->hasMany(Chat::class, 'reciver_id');
     }
 
 
-   /**
+    /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
