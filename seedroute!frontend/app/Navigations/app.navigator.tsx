@@ -12,6 +12,7 @@ import { useAppSelector } from "../redux/hooks";
 import Advisors from "../screens/Advisors/Advisors.screen";
 // import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 import AddRoom from "../screens/AddRoom/AddRoom.Screen";
+import DoPlant from "../screens/DoPlant/DoPlant";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -48,6 +49,7 @@ return (
       <Screen name="Watering" component={Watering}></Screen>
       {/* <Screen name="ChatRoom" component={ChatRoom}></Screen> */}
       <Screen name="AddRoom" component={AddRoom}></Screen>
+      <Screen name="DoPlant" component={DoPlant}></Screen>
     </Navigator>
   </NavigationContainer>
 )};
