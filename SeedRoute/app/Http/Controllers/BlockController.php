@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Block;
 use App\Models\BlockSelected;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -85,10 +86,12 @@ class BlockController extends Controller
     public function doPlant(Request $request, $name){
 
         $user = auth()->user()->id;
+        $date = Carbon::now();
         $block = BlockSelected::where("user_id",$user)->where('name','like',$name)->first();
         echo($block);
         if($block){
             $block->plant_id = $request->plant_id ;
+            $block->planted_at = $date;
             $block->update();
         }
 
