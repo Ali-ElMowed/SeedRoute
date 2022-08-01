@@ -59,6 +59,7 @@ const LoginScreen = (props: loginScreenProps) => {
         value={password}
         placeholder={"Enter your password"}
         style={styles.passwordInput}
+        secureTextEntry
       />
      {
       loading && <Loading/>
