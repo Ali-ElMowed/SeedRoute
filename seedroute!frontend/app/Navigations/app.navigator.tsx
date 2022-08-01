@@ -13,6 +13,7 @@ import Advisors from "../screens/Advisors/Advisors.screen";
 // import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 import AddRoom from "../screens/AddRoom/AddRoom.Screen";
 import DoPlant from "../screens/DoPlant/DoPlant";
+import EditProfile from "../screens/EditeProfile/EditProfile";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -40,7 +41,7 @@ return (
       <Screen name="Sketch" component={Sketch}></Screen>
       <Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeScreen} 
         options={{ title: "Seed Route" }}
       ></Screen>
       <Screen name="Register" component={Register}></Screen>
@@ -50,6 +51,7 @@ return (
       {/* <Screen name="ChatRoom" component={ChatRoom}></Screen> */}
       <Screen name="AddRoom" component={AddRoom}></Screen>
       <Screen name="DoPlant" component={DoPlant}></Screen>
+      <Screen name="EditProfile" component={EditProfile}></Screen>
     </Navigator>
   </NavigationContainer>
 )};
