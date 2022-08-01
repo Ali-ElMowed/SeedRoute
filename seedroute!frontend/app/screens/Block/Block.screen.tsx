@@ -31,9 +31,25 @@ const Block = (props: homeScreenProps) => {
     };
     getData(props.name);
     console.log(_block);
-  }, []);
+  }, []); 
 
-  
+  useEffect(() => {
+    const getData = async (id: number) => {
+      try {
+        const plantById = await getPlantById(_block?.plant_id);
+        setPlant(plantById?.data?.data);
+        setLoading(true);
+
+        console.log(plantById?.data.data);
+      } catch (error) { 
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData(_block?.plant_id);
+    console.log(_block);
+  }, []);
  
   const goToWatering = () => props.navigation.navigate("Watering");
   const doPlant = () => props.navigation.navigate("doPlant");
