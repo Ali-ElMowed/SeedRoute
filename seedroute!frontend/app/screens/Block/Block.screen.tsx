@@ -31,7 +31,7 @@ const Block = (props: homeScreenProps) => {
     };
     getData(props.name);
     console.log(_block);
-  }, []); 
+  }, []);
 
   useEffect(() => {
     const getData = async (id: number) => {
@@ -112,25 +112,47 @@ const Block = (props: homeScreenProps) => {
 
 const styles = StyleSheet.create({
   img: {
-   
+    maxWidth: 250,
+    maxHeight: 250,
+    resizeMode: "contain",
+    alignSelf: "center",
+    borderRadius: 6,
+    marginTop: 0,
+    marginBottom: 10,
   },
   btn: {
-   
+    marginTop: 30,
+    width: 200,
+    alignSelf: "center",
   },
   blockName: {
-    
+    margin: 20,
+    fontSize: 18,
+    marginTop: 30,
+    alignSelf: "center",
   },
   noplant: {
-    
+    fontSize: 22,
+    alignSelf: "center",
+    marginTop: 100,
   },
   yesPlant: {
-    
+    fontSize: 22,
+    alignSelf: "flex-start",
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 10,
   },
   phase: {
-   
+    marginLeft: 10,
+    fontSize: 16,
+    marginBottom: 7,
   },
   phaseTitle: {
-    
+    marginLeft: 10,
+    fontSize: 16,
+    marginBottom: 7,
+    fontWeight: "bold",
   },
 });
 export default Block;
