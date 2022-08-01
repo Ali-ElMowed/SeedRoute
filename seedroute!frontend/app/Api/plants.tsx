@@ -23,3 +23,13 @@ export const getPlantById = async (data: number) => {
     });
     return res;
 }
+
+export const doPlant = async (plant_id: any, blockId:number) => {
+    const user:any = JSON.parse(await AsyncStorage.getItem('user')||'')
+       const res = await axios.post(`http://10.0.2.2:8000/api/doPlant/${blockId}`,plant_id,{
+           headers: {
+               Authorization :  `Bearer ${user?.access_token}`
+           }
+       });
+       return res;
+   }
