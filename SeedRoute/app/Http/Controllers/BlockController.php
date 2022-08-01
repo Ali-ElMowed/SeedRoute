@@ -70,15 +70,17 @@ class BlockController extends Controller
     //     }
     // }
 
-    public function getSelectedBlocks($id = null)
+    public function getSelectedBlocks($name = null)
     {
         $user = auth()->user()->id;
-        if ($id != null) {
-            $blocks = BlockSelected::find($id);
+        if ($name != null) {
+            $blocks = BlockSelected::where("user_id",$user)->where('name','like',$name)->first();
         } else {
             $blocks = BlockSelected::select('name')->where("user_id",$user)->get();
         }
 
         return jsonResponse("blocks found", 200, $blocks);
     }
+
+
 }
