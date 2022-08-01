@@ -8,6 +8,8 @@ const EditProfile = (props: homeScreenProps) => {
   return (
     <ScrollView>
       <View >
+        <Image source={require('../../../assets/images/avatar.jpg')}/>
+        
       </View>
     </ScrollView>
   );
