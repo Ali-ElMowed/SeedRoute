@@ -131,7 +131,7 @@ const Profile = (props: homeScreenProps) => {
       value: 0,
     },
   ]);
-  const goToBlock = () => props.navigation.navigate("Block");
+  const goToBlock = (blockName:number) => props.navigation.navigate("Block",{blockName});
 
   useEffect(() => {
     const getBlocks = async () => {
@@ -184,7 +184,7 @@ const Profile = (props: homeScreenProps) => {
             <ProfileBlocks
               name={block.name}
               value={block.value}
-              onPress={goToBlock}
+              onPress={()=> goToBlock(block.name)}
             />
           ))}
         </View>
