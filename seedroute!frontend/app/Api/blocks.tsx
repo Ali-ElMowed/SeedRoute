@@ -26,3 +26,13 @@ export const getSelectedBlocks = async () => {
     });
     return res;
 }
+export const getSelectedBlockByName = async (name:number) => {
+    const user:any = JSON.parse(await AsyncStorage.getItem('user')||'')
+    
+    const res = await axios.get(`http://10.0.2.2:8000/api/getSelectedBlocks/${name}`,{
+        headers: {
+            Authorization :  `Bearer ${user?.access_token}`
+        }
+    });
+    return res;
+}
