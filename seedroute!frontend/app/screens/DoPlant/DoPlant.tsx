@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 interface homeScreenProps {
   navigation: any;
 }
-const Notifications = (props: homeScreenProps) => {
+const DoPlant = (props: homeScreenProps) => {
 
   return (
     <ScrollView>
@@ -16,4 +16,4 @@ const Notifications = (props: homeScreenProps) => {
 const styles = StyleSheet.create({
 
 })
-export default Notifications;
+export default DoPlant;
