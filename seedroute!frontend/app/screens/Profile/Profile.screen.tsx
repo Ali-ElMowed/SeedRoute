@@ -13,7 +13,7 @@ interface homeScreenProps {
 const Profile = (props: homeScreenProps) => {
   const goToSketch = () => props.navigation.navigate("Sketch");
   const goEditProfile = () => {
-    props.navigation.navigate("Sketch");
+    props.navigation.navigate("EditProfile");
   };
   const [user,setUser] = useState('')
   const [loading, setLoading] = useState(false);
