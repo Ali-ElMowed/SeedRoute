@@ -16,6 +16,8 @@ interface homeScreenProps {
 const EditProfile = (props: homeScreenProps) => {
   const [name, setName] = useState("12345678");
   const [email, setEmail] = useState("12345678");
+  const [password, setPassword] = useState("12345678");
+  const [verifyPassword, setVerifyPassword] = useState("12345678");
   return (
     <ScrollView>
       <View>
@@ -28,9 +30,13 @@ const EditProfile = (props: homeScreenProps) => {
           <Text style={styles.changetext}>Change Profile Picture</Text>
         </Pressable>
         <Text style={styles.titles}>Name</Text>
-        <TextInput style={styles.input}/>
+        <TextInput style={styles.input} onChangeText={setName}/>
         <Text style={styles.titles}>Email</Text>
-        <TextInput style={styles.input}/>
+        <TextInput style={styles.input} onChangeText={setEmail}/>
+        <Text style={styles.titles}>Email</Text>
+        <TextInput style={styles.input} onChangeText={setPassword}/>
+        <Text style={styles.titles}>Email</Text>
+        <TextInput style={styles.input} onChangeText={setVerifyPassword}/>
         <Pressable>
           <Text style={styles.changetext}>Update</Text>
         </Pressable>
@@ -46,7 +52,7 @@ const styles = StyleSheet.create({
     maxWidth: 150,
     alignSelf: "center",
     borderRadius: 100,
-    marginTop: 100,
+    marginTop: 30,
   },
   changetext: {
     margin: 10,
