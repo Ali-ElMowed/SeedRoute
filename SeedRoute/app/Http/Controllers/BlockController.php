@@ -82,5 +82,18 @@ class BlockController extends Controller
         return jsonResponse("blocks found", 200, $blocks);
     }
 
+    public function doPlant(Request $request, $name){
+
+        $user = auth()->user()->id;
+        $block = BlockSelected::where("user_id",$user)->where('name','like',$name)->first();
+        echo($block);
+        if($block){
+            $block->plant_id = $request->plant_id ;
+            $block->update();
+        }
+
+        return jsonResponse("planted", 200);
+    }
+
 
 }
