@@ -10,10 +10,28 @@ interface homeScreenProps {
   name: any;
 }
 const Block = (props: homeScreenProps) => {
-  
+  const route = useRoute();
 
+  const [_block, setBlock]: any = useState({});
+  const [_plant, setPlant]: any = useState(null);
+  const [loading, setLoading] = useState(false);
 
-
+  useEffect(() => {
+    const getData = async (blockName: number) => {
+      try {
+        const { blockName }: any = route.params;
+        const blockByName = await getSelectedBlockByName(blockName);
+        setBlock(blockByName?.data?.data);
+        setLoading(true);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData(props.name);
+    console.log(_block);
+  }, []);
 
   
  
