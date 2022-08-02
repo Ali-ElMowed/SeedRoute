@@ -12,7 +12,7 @@ interface homeScreenProps {
 }
 const Block = (props: homeScreenProps) => {
   const route = useRoute();
-  const blockState = useAppSelector(state=>state.block) 
+  const blockState = useAppSelector((state) => state.block);
   const [_block, setBlock]: any = useState({});
   const [_plant, setPlant]: any = useState(null);
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const Block = (props: homeScreenProps) => {
         const { name }: any = blockState;
         const blockByName = await getSelectedBlockByName(name);
         console.log("block fetched 1");
-        
+
         setBlock(blockByName?.data?.data);
       } catch (error) {
         console.log(error);
@@ -43,7 +43,7 @@ const Block = (props: homeScreenProps) => {
         console.log("plant fetched 1");
 
         setPlant(plantById?.data?.data);
-      } catch (error) { 
+      } catch (error) {
         console.log(error);
       } finally {
         setLoading(false);
@@ -52,31 +52,37 @@ const Block = (props: homeScreenProps) => {
     getData(_block?.plant_id);
   }, [_block]);
 
-
   const goToWatering = () => props.navigation.navigate("Watering");
   const doPlant = () => props.navigation.navigate("DoPlant");
- 
+
   return (
     <ScrollView>
       {loading ? (
         <Loading />
       ) : (
         <View>
-          <Btn text="watering" onPress={goToWatering} style={styles.btn} />
-          <Text style={styles.blockName}>
-            This is block number {_block?.name}
-          </Text>
-
           <View>
-            {!_block?.plant_id? (
+            {!_block?.plant_id ? (
               <View>
                 <Text style={styles.noplant}>
                   This Block is ready To be Planted
                 </Text>
-                <Btn text="Plant" style={styles.btn} onPress={()=> doPlant()} />
+                <Btn
+                  text="Plant"
+                  style={styles.btn}
+                  onPress={() => doPlant()}
+                />
               </View>
             ) : (
               <>
+                <Btn
+                  text="watering"
+                  onPress={goToWatering}
+                  style={styles.btn}
+                />
+                <Text style={styles.blockName}>
+                  This is block number {_block?.name}
+                </Text>
                 <Image
                   source={require("../../../assets/images/potato.jpeg")}
                   style={styles.img}
@@ -112,7 +118,6 @@ const Block = (props: homeScreenProps) => {
 };
 
 const styles = StyleSheet.create({
-  
   img: {
     maxWidth: 250,
     maxHeight: 250,
@@ -123,9 +128,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   btn: {
-    marginTop:3 ,
-    marginLeft:100,
-    marginRight:100,
+    marginTop: 3,
+    marginLeft: 100,
+    marginRight: 100,
     alignSelf: "center",
   },
   blockName: {
@@ -137,7 +142,8 @@ const styles = StyleSheet.create({
   noplant: {
     fontSize: 22,
     alignSelf: "center",
-    marginTop: 100,
+    marginTop: 200,
+    marginBottom:20
   },
   yesPlant: {
     fontSize: 22,
