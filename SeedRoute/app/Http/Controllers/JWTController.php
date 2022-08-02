@@ -119,4 +119,24 @@ class JWTController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
+
+    public function updateUser(Request $request)
+    {
+
+        $user = auth()->user();
+
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email
+        ]);
+
+        if ($request->file('image') !== null) {
+            $path = $request->file('image')->store('uploads','public');
+            $user->update(['image' => $path]);
+        }
+
+            return jsonResponse("user updated", 200);
+
+    }
 }
+
