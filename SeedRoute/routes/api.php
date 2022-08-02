@@ -49,9 +49,14 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::get('getBlocks', [BlockController::class, 'getBlocks']);
     Route::post('storeBlocksSelected', [BlockController::class, 'storeBlocks']);
     Route::get('getSelectedBlocks/{id?}', [BlockController::class, 'getSelectedBlocks']);
-    Route::post('/doPlant/{id}', [BlockController::class, 'doPlant']);
+    Route::post('/doPlant', [BlockController::class, 'doPlant']);
 
     Route::get('getAdvisor/{id?}', [AdvisorController::class, 'getAdvisors']);
+
+    Route::group(['middleware' => 'admin'], function () {
+
+        Route::post('/updateUser', [JWTController::class, 'updateUser']);
+    });
 
 
 });
