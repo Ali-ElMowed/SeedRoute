@@ -30,14 +30,11 @@ class PlantController extends Controller
         $plant->type = $request->type;
         $plant->soil_type = $request->soil_type;
         $plant->number_of_phases = $request->number_of_phases;
-        $plant->save();
-
-        // second method //recommended
-        if ($request->file('plant_image') !== null) {
-            $path = $request->file('plant_image')->store('uploads', 'public');
-            $plant->update(['plant_image' => $path]);
+        if ($request->file('image') !== null) {
+            $path = $request->file('image')->store('uploads','public');
+            $plant->image = $path;
         }
-
+        $plant->save();
         return jsonResponse("plant added", 200);
     }
 
