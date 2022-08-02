@@ -89,7 +89,8 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 | Planted Block  | Empty Block  |
 | -----------------| -----|
-|![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182414461-c6bb03d0-9ada-41c1-869a-1b997ed549eb.PNG)
+|![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182416350-4d3c6a2d-0dda-49b2-90bb-c81c71c2e2a4.PNG)
+
 
 
 ![title6](https://user-images.githubusercontent.com/97544165/182354033-6d7f3eaa-0752-41ac-9dc6-7dac8f0aa7f0.png)
