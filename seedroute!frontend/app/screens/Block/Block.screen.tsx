@@ -124,7 +124,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginTop:3 ,
-    width: 100000,
+    marginLeft:100,
+    marginRight:100,
     alignSelf: "center",
   },
   blockName: {
