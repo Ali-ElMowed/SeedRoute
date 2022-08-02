@@ -44,7 +44,21 @@
 | ![Block page](https://user-images.githubusercontent.com/97544165/182411876-373f0957-0ecc-4b5f-920c-825691c00c5d.png) | ![watring page](https://user-images.githubusercontent.com/97544165/182411929-0d54e340-d923-4e30-a9bf-33200faba254.png)
 
 
+<br><br>
 
 ![title4](https://user-images.githubusercontent.com/97544165/182354029-e65071d1-4226-40e6-8bcd-b92c99ef9412.png)
+
+Here's a brief high-level overview of the tech stack the SeedRoute app uses:
+
+- This project uses the React Native. 
+
+- For persistent storage (database), the app uses the SQL.
+- 
+- To send local push notifications, the app uses the Expo Notification
+  
+- For Chatting the app uses Firebase, Firestore and Gifted Chat.
+
+- And for Hardwares the app uses arduino with water pump.
+
 ![title5](https://user-images.githubusercontent.com/97544165/182354031-5003503e-3ba0-4775-be25-d0e6efae6bd7.png)
 ![title6](https://user-images.githubusercontent.com/97544165/182354033-6d7f3eaa-0752-41ac-9dc6-7dac8f0aa7f0.png)
