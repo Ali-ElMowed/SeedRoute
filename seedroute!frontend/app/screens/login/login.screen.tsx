@@ -8,6 +8,7 @@ import Btn from "../../Components/Btn";
 import 'localstorage-polyfill'; 
 import Loading from "../../Components/Loading";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { schedulePushNotification } from "../Notification/Notification.screen";
 
 
 interface loginScreenProps {
@@ -33,6 +34,7 @@ const LoginScreen = (props: loginScreenProps) => {
           const user = await AsyncStorage.setItem('user',JSON.stringify(res?.data))
 
           if(res?.status === 200){
+            await schedulePushNotification("Watering reminder","Did you water your plants today",new Date(),new Date().getDay())
             props.navigation.navigate("Home")
           }
       } catch (error) {
