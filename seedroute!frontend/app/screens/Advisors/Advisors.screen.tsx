@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -7,56 +7,63 @@ import {
   ScrollView,
   Pressable,
 } from "react-native";
+import { getAdvisors } from "../../Api/advisors";
 import Btn from "../../Components/Btn";
+import Loading from "../../Components/Loading";
 interface homeScreenProps {
   navigation: any;
 }
 const Advisors = (props: homeScreenProps) => {
   const goAdvInfo = () => props.navigation.navigate("");
 
+  const [_advisors, setaAdvisors]:any = useState([]);
+  const [loading,setLoading] = useState(false);
+
+  useEffect(() => {
+      const getData = async () => {
+          try {
+              setLoading(true)
+              const allAdvisors = await getAdvisors()
+              setaAdvisors(allAdvisors?.data?.data)
+              console.log(allAdvisors?.data?.data);
+              
+          } catch (error) {
+              console.log(error);
+          } finally{
+              setLoading(false)
+          }
+      }
+      getData()
+  }, [])
+
+
+
+
+  // STILL HARDCODED It needs to be done
+
   return (
     <View style={styles.container}>
-      <Btn text="create a room" style={styles.btn} onPress={()=>props.navigation.navigate("AddRoom")}/>
+      {/* <Btn text="create a room" style={styles.btn} onPress={()=>props.navigation.navigate("AddRoom")}/> */}
+
+
+      {loading ? <Loading/> :
+      _advisors ? 
+      <View>
+      { _advisors.map((advisor: any)=>( 
+
       <Pressable style={styles.advisor_card}>
         <Image
           source={require("../../../assets/images/avatar.jpg")}
           style={styles.advisor_img}
         />
-        <Text style={styles.advisor_name}>John Doe</Text>
-        <Text style={styles.advisor_ex}>Expreience: 10 years</Text>
-        <Text style={styles.advisor_ex}>Job: agriculture engineer</Text>
-        <Text style={styles.advisor_ex}>Bio: Some Bio</Text>
+        <Text style={styles.advisor_name}>{_advisors?.name}</Text>
+        <Text style={styles.advisor_ex}>Expreience: {_advisors?.ex_years} years</Text>
+        <Text style={styles.advisor_ex}>Job: {_advisors?.job}</Text>
+        <Text style={styles.advisor_ex}>Bio: {_advisors?.bio}</Text>
       </Pressable>
-      <Pressable style={styles.advisor_card}>
-        <Image
-          source={require("../../../assets/images/avatar.jpg")}
-          style={styles.advisor_img}
-        />
-        <Text style={styles.advisor_name}>Nour Maher</Text>
-        <Text style={styles.advisor_ex}>Expreience: 5 years</Text>
-        <Text style={styles.advisor_ex}>Job: Software engineer</Text>
-        <Text style={styles.advisor_ex}>Bio: Some Bio</Text>
-      </Pressable>
-      <Pressable style={styles.advisor_card}>
-        <Image
-          source={require("../../../assets/images/avatar.jpg")}
-          style={styles.advisor_img}
-        />
-        <Text style={styles.advisor_name}>Saeed Saeed</Text>
-        <Text style={styles.advisor_ex}>Expreience: 6 years</Text>
-        <Text style={styles.advisor_ex}>Job: Waiter</Text>
-        <Text style={styles.advisor_ex}>Bio: Flower lover</Text>
-      </Pressable>
-      <Pressable style={styles.advisor_card}>
-        <Image
-          source={require("../../../assets/images/avatar.jpg")}
-          style={styles.advisor_img}
-        />
-        <Text style={styles.advisor_name}>Daniel Dany</Text>
-        <Text style={styles.advisor_ex}>Expreience: 2 years</Text>
-        <Text style={styles.advisor_ex}>Job: Dentist</Text>
-        <Text style={styles.advisor_ex}>Bio: Planter</Text>
-      </Pressable>
+      ))} 
+      </View> : <Text> No Advisors found</Text>
+      }
     </View>
   );
 };
