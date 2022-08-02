@@ -29,6 +29,8 @@ const Plants = (props: homeScreenProps) => {
                 setLoading(true)
                 const allPlants = await plants()
                 setPlants(allPlants?.data.data)
+                console.log(allPlants?.data.data);
+                
             } catch (error) {
                 console.log(error);
             } finally{
@@ -57,7 +59,7 @@ const Plants = (props: homeScreenProps) => {
           
            <Pressable style={styles.plant_card} onPress={()=>{goInfo(plant?.id)}}>
             <Image
-              source={require("../../../assets/images/symbol1.jpg")}
+              source={{uri:`http://10.0.2.2:8000/storage/${plant?.image}`}}
               style={styles.plant_img}
             />
             <Text style={styles.plant_name}>{plant?.name}</Text>
