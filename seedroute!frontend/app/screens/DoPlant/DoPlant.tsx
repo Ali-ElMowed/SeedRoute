@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -10,34 +10,52 @@ import {
 } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faSeedling } from "@fortawesome/free-solid-svg-icons";
-import { plants } from "../../Api/plants";
+import { doPlant, plants } from "../../Api/plants";
 import Loading from "../../Components/Loading";
+import { useRoute } from "@react-navigation/native";
+import { useAppSelector } from "../../redux/hooks";
 interface homeScreenProps {
   navigation: any;
 }
 const DoPlant = (props: homeScreenProps) => {
-  const pickPlant = (id : number) => props.navigation.navigate('Plant',{id});
-  const [loading,setLoading] = useState(false)
+  const blockState = useAppSelector(state=>state.block) 
 
-    const [_plants, setPlants] = useState([]);
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                setLoading(true)
-                const allPlants = await plants()
-                setPlants(allPlants?.data.data)
-            } catch (error) {
-                console.log(error);
-            } finally{
-                setLoading(false)
-            }
-        }
-        getData()
-    }, [])
+  const [loading, setLoading] = useState(false);
+  const [_plants, setPlants] = useState([]);
 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        setLoading(true);
+        const allPlants = await plants();
+        setPlants(allPlants?.data.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+  const route : any = useRoute()
+  const {name}:any = blockState
+  const handlePickingPlant = async (id:number) => {
+    try {
+      setLoading(true)
+      const res = await doPlant(name,id)
+      
+      props.navigation.replace('Block') 
+      return res  
+      
+    } catch (error) {
+      console.log(error)
+    } finally{
+      setLoading(false)
+    }
+  }
 
   return (
-    
     <ScrollView>
       <View style={styles.search_bar}>
         <TextInput
@@ -47,24 +65,34 @@ const DoPlant = (props: homeScreenProps) => {
         <FontAwesomeIcon icon={faSearch} style={styles.icon} />
       </View>
 
-      {loading?<Loading/>
-      :_plants?<>
-      <View style={styles.container}>
-        {_plants?.map((plant: any)=>( 
-          
-           <Pressable style={styles.plant_card} onPress={()=>{pickPlant(plant?.id)}}>
-            <Image
-              source={require("../../../assets/images/symbol1.jpg")}
-              style={styles.plant_img}
-            />
-            <Text style={styles.plant_name}>{plant?.name}</Text>
-          </Pressable>
-          ))}
-      </View>
-     </> : <Text>No Plants Found</Text>}
+      {loading ? (
+        <Loading />
+      ) : _plants ? (
+        <>
+          <View style={styles.container}>
+            {_plants?.map((plant: any) => (
+              <Pressable
+                style={styles.plant_card}
+                onPress={() => {
+                  handlePickingPlant(plant?.id);
+                }}
+              >
+                <Image
+                  source={require("../../../assets/images/symbol1.jpg")}
+                  style={styles.plant_img}
+                />
+                <Text style={styles.plant_name}>{plant?.name}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </>
+      ) : (
+        <Text>No Plants Found</Text>
+      )}
     </ScrollView>
   );
-};``
+};
+``;
 
 const styles = StyleSheet.create({
   icon: {
@@ -83,7 +111,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 330,
     borderRadius: 6,
-    borderColor:"#0D9B81"
+    borderColor: "#0D9B81",
   },
   plant_card: {
     padding: 20,
@@ -97,8 +125,8 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     alignSelf: "center",
-    borderColor:"#0D9B81",
-    borderRadius:6
+    borderColor: "#0D9B81",
+    borderRadius: 6,
   },
   btn: {
     maxWidth: 100,
@@ -108,7 +136,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginLeft: 15
+    marginLeft: 15,
   },
   plant_name: {
     textAlign: "center",
