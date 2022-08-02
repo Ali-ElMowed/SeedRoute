@@ -84,7 +84,7 @@ const Block = (props: homeScreenProps) => {
                   This is block number {_block?.name}
                 </Text>
                 <Image
-                  source={require("../../../assets/images/potato.jpeg")}
+                  source={{uri:`http://10.0.2.2:8000/storage/${_plant?.image}`}}
                   style={styles.img}
                 />
                 <Text style={styles.yesPlant}>Plant: {_plant?.name}</Text>
