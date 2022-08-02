@@ -16,6 +16,35 @@
 
 
 ![title3](https://user-images.githubusercontent.com/97544165/182354025-22a6968f-65e0-4c9e-bed5-a76e4a5d6dfd.png)
+
+| Loading  | Login  |
+| -----------------| -----|
+| ![Loading](https://user-images.githubusercontent.com/97544165/182411029-e2110146-35d3-410b-99e0-c9ce95019dfd.png) | ![Login](https://user-images.githubusercontent.com/97544165/182411108-cd727cb2-df0d-4f8b-9ad5-1b9f726b074e.png)
+
+| Sketch Land  | My Land  |
+| -----------------| -----|
+| ![sketch your land](https://user-images.githubusercontent.com/97544165/182411367-b463569a-c044-4cc4-b034-272d95749ab7.png) | ![My land](https://user-images.githubusercontent.com/97544165/182411471-4a066e25-c2fe-4f88-a2c7-a212218337b8.png)
+
+
+
+| Plants  | Plant  |
+| -----------------| -----|
+| ![plants](https://user-images.githubusercontent.com/97544165/182411596-3eafef41-a79a-4943-8b9f-6657bac22128.png) | ![plant](https://user-images.githubusercontent.com/97544165/182411636-1fa62094-db25-4fbf-8992-9772849d749a.png)
+
+
+
+
+| Ask Advisor  | Chat  |
+| -----------------| -----|
+| ![Ask Advisor](https://user-images.githubusercontent.com/97544165/182411759-5134eeeb-dd23-4892-9b62-2efd00bd70bf.png) | ![Chat](https://user-images.githubusercontent.com/97544165/182411785-e975921f-0252-4f86-861d-7c6fd8b1826e.png)
+
+
+| Block  | Watering  |
+| -----------------| -----|
+| ![Block page](https://user-images.githubusercontent.com/97544165/182411876-373f0957-0ecc-4b5f-920c-825691c00c5d.png) | ![watring page](https://user-images.githubusercontent.com/97544165/182411929-0d54e340-d923-4e30-a9bf-33200faba254.png)
+
+
+
 ![title4](https://user-images.githubusercontent.com/97544165/182354029-e65071d1-4226-40e6-8bcd-b92c99ef9412.png)
 ![title5](https://user-images.githubusercontent.com/97544165/182354031-5003503e-3ba0-4775-be25-d0e6efae6bd7.png)
 ![title6](https://user-images.githubusercontent.com/97544165/182354033-6d7f3eaa-0752-41ac-9dc6-7dac8f0aa7f0.png)
