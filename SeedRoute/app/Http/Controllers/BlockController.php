@@ -27,20 +27,7 @@ class BlockController extends Controller
 
     public function storeBlocks(Request $request)
     {
-        // $selected_blocks = [
-        // [
-        //     'name' => '20',
-        //     'value' => '0'
-        // ],
-        // [
-        //     'name' => '29',
-        //     'value' => '1'
-        // ]
-        // ];
-
-
         try {
-
             $data = [];
             foreach ($request->selected_blocks as $block) {
                 if ($block['value']) {
@@ -56,20 +43,9 @@ class BlockController extends Controller
             return jsonResponse('success', 201,$data);
 
         } catch (Exception $e) {
-            return jsonResponse('error', 500, [$e->getMessage()]);
+            return jsonResponse('error', 500, ["$e->getMessage()"]);
         }
     }
-
-    // public function getSelectedBlocks()
-    // {
-    //     try {
-    //        $selected_blocks = auth()->user()->blocks_selected->blocks;
-    //        return jsonResponse('success', 200, $selected_blocks);
-
-    //     } catch (Exception $e) {
-    //         return jsonResponse('error', 500, [$e->getMessage()]);
-    //     }
-    // }
 
     public function getSelectedBlocks($name = null)
     {
@@ -83,17 +59,12 @@ class BlockController extends Controller
         return jsonResponse("blocks found", 200, $blocks);
     }
 
-    public function doPlant(Request $request, $name){
+    public function doPlant(Request $request){
 
-        $user = auth()->user()->id;
-        $date = Carbon::now();
-        $block = BlockSelected::where("user_id",$user)->where('name','like',$name)->first();
-        echo($block);
-        if($block){
-            $block->plant_id = $request->plant_id ;
-            $block->planted_at = $date;
-            $block->update();
-        }
+        $block = BlockSelected::where("user_id",auth()->id())->where('block_id',$request->block_id)->update([
+            'plant_id' => $request->plant_id,
+            'planted_at' =>now()
+        ]);
 
         return jsonResponse("planted", 200);
     }
