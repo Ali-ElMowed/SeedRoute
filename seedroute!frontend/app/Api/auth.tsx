@@ -25,7 +25,7 @@ export const register = async (name: string, email: string, password: string, pa
 }
 export const profile = async () => {
     const user:any = JSON.parse(await AsyncStorage.getItem('user')||'')
-    const res = axios.post(`http://10.0.2.2:8000/api/register`, {
+    const res = axios.get(`http://10.0.2.2:8000/api/profile`,{
         headers: {
             Authorization :  `Bearer ${user?.access_token}`
         }})
