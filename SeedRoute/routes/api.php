@@ -29,7 +29,7 @@ Route::post('/login', [JWTController::class, 'login']);
 Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::post('/logout', [JWTController::class, 'logout']);
     Route::post('/refresh', [JWTController::class, 'refresh']);
-    Route::post('/profile', [JWTController::class, 'profile']);
+    Route::get('/profile', [JWTController::class, 'profile']);
 
     //Plants routes
     Route::post('/addPlant', [PlantController::class, 'addPlant']);
