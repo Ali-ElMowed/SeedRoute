@@ -6,11 +6,14 @@ import Block from "../../Components/Block";
 import Btn from "../../Components/Btn";
 import Loading from "../../Components/Loading";
 import ProfileBlocks from "../../Components/ProfileBlocks";
+import { useAppDispatch } from "../../redux/hooks";
+import { set } from "../../redux/slices/block";
 
 interface homeScreenProps {
   navigation: any;
 }
 const Profile = (props: homeScreenProps) => {
+  const dispatch = useAppDispatch()
   const goToSketch = () => props.navigation.navigate("Sketch");
   const goEditProfile = () => {
     props.navigation.navigate("EditProfile");
@@ -131,7 +134,11 @@ const Profile = (props: homeScreenProps) => {
       value: 0,
     },
   ]);
-  const goToBlock = (blockName:number) => props.navigation.navigate("Block",{blockName});
+  const goToBlock = (blockName:number) => {
+    dispatch(set({
+      name:blockName
+    }))
+    props.navigation.navigate("Block");}
 
   useEffect(() => {
     const getBlocks = async () => {
