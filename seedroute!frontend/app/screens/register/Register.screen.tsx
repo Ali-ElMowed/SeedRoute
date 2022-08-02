@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { register } from "../../Api/auth";
 import Btn from "../../Components/Btn";
 import { set } from "../../redux/slices/user";
+import { schedulePushNotification } from "../Notification/Notification.screen";
 
 
 interface RegisterScreenProps {
@@ -31,6 +32,7 @@ interface RegisterScreenProps {
               
           dispatch(set(res?.data))
           const user = await AsyncStorage.setItem('user',JSON.stringify(res?.data))
+          await schedulePushNotification("Watering reminder","Did you water your plants today",new Date(),new Date().getDay)
           props.navigation.navigate("Sketch")
           
       } catch (error) {
