@@ -53,7 +53,7 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 - This project uses the React Native. 
 
 - For persistent storage (database), the app uses the SQL.
-- 
+
 - To send local push notifications, the app uses the Expo Notification
   
 - For Chatting the app uses Firebase, Firestore and Gifted Chat.
