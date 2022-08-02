@@ -40,10 +40,10 @@ const DoPlant = (props: homeScreenProps) => {
 
   const route : any = useRoute()
   const {name}:any = blockState
-  const handlePickingPlant = async (id:number) => {
+  const handlePickingPlant = async (blockId:any ,plantId:number) => {
     try {
       setLoading(true)
-      const res = await doPlant(name,id)
+      const res = await doPlant(plantId,blockId)
       
       props.navigation.replace('Block') 
       return res  
@@ -73,9 +73,9 @@ const DoPlant = (props: homeScreenProps) => {
             {_plants?.map((plant: any) => (
               <Pressable
                 style={styles.plant_card}
-                onPress={() => {
-                  handlePickingPlant(plant?.id);
-                }}
+                onPress={()=>
+                  handlePickingPlant(name,plant?.id)
+                }
               >
                 <Image
                   source={require("../../../assets/images/symbol1.jpg")}
