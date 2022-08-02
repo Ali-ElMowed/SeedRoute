@@ -142,7 +142,7 @@ const Sketch = (props: homeScreenProps) => {
 
   const handleSelection = useCallback(async ()=>{
     try {
-      setLoading(true)
+      setLoading(true)      
       const res = await postSelectedBlocks({"selected_blocks" :blocks})
       myLand()
     } catch (error) {
