@@ -4,8 +4,8 @@
 >SeedRoute guides the user from seeding to harvesting, passing through all the phases.
 >There are 3 daily tasks that the app completes: 
 
-1.Notifies the user about the land blocks watering schedule and waters it by a command from the user.
-2.Informs the user about different types of plants giving with tips and recognitions.
+1.Notifies the user about the land blocks watering schedule and waters it by a command from the user.<br>
+2.Informs the user about different types of plants giving with tips and recognitions.<br>
 3.Provides a space for the user to contact an advisor to ask questions.
 
 ![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png)
