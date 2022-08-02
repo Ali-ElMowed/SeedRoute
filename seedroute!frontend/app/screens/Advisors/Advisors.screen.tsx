@@ -48,7 +48,7 @@ const Advisors = (props: homeScreenProps) => {
 
       {loading ? <Loading/> :
       _advisors ? 
-      <View>
+      <View style={styles.container}>
       { _advisors.map((advisor: any)=>( 
 
       <Pressable style={styles.advisor_card}>
