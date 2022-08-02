@@ -5,42 +5,44 @@ import { getSelectedBlockByName } from "../../Api/blocks";
 import { getPlantById } from "../../Api/plants";
 import Btn from "../../Components/Btn";
 import Loading from "../../Components/Loading";
+import { useAppSelector } from "../../redux/hooks";
 interface homeScreenProps {
   navigation: any;
   name: any;
 }
 const Block = (props: homeScreenProps) => {
   const route = useRoute();
-
+  const blockState = useAppSelector(state=>state.block) 
   const [_block, setBlock]: any = useState({});
   const [_plant, setPlant]: any = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const getData = async (blockName: number) => {
+    const getData = async () => {
       try {
-        const { blockName }: any = route.params;
-        const blockByName = await getSelectedBlockByName(blockName);
-        setBlock(blockByName?.data?.data);
         setLoading(true);
+        const { name }: any = blockState;
+        const blockByName = await getSelectedBlockByName(name);
+        console.log("block fetched 1");
+        
+        setBlock(blockByName?.data?.data);
       } catch (error) {
         console.log(error);
       } finally {
         setLoading(false);
       }
     };
-    getData(props.name);
-    console.log(_block);
+    getData();
   }, []);
 
   useEffect(() => {
     const getData = async (id: number) => {
       try {
-        const plantById = await getPlantById(_block?.plant_id);
-        setPlant(plantById?.data?.data);
         setLoading(true);
+        const plantById = await getPlantById(_block?.plant_id);
+        console.log("plant fetched 1");
 
-        console.log(plantById?.data.data);
+        setPlant(plantById?.data?.data);
       } catch (error) { 
         console.log(error);
       } finally {
@@ -48,12 +50,11 @@ const Block = (props: homeScreenProps) => {
       }
     };
     getData(_block?.plant_id);
-    console.log(_block);
-  }, []);
- 
+  }, [_block]);
+
+
   const goToWatering = () => props.navigation.navigate("Watering");
-  const doPlant = () => props.navigation.navigate("doPlant");
-  const plantedAt = new Date(_block.planted_at);
+  const doPlant = () => props.navigation.navigate("DoPlant");
  
   return (
     <ScrollView>
@@ -67,12 +68,12 @@ const Block = (props: homeScreenProps) => {
           </Text>
 
           <View>
-            {_block?.plant_id === null ? (
+            {!_block?.plant_id? (
               <View>
                 <Text style={styles.noplant}>
                   This Block is ready To be Planted
                 </Text>
-                <Btn text="Plant" style={styles.btn} onPress={doPlant} />
+                <Btn text="Plant" style={styles.btn} onPress={()=> doPlant()} />
               </View>
             ) : (
               <>
@@ -111,6 +112,7 @@ const Block = (props: homeScreenProps) => {
 };
 
 const styles = StyleSheet.create({
+  
   img: {
     maxWidth: 250,
     maxHeight: 250,
@@ -121,8 +123,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   btn: {
-    marginTop: 30,
-    width: 200,
+    marginTop:3 ,
+    width: 100000,
     alignSelf: "center",
   },
   blockName: {
