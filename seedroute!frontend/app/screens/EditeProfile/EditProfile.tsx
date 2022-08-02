@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -10,14 +10,40 @@ import {
   TextInput
 
 } from "react-native";
+import { profile } from "../../Api/auth";
 interface homeScreenProps {
   navigation: any;
 }
 const EditProfile = (props: homeScreenProps) => {
-  const [name, setName] = useState("12345678");
-  const [email, setEmail] = useState("12345678");
-  const [password, setPassword] = useState("12345678");
-  const [verifyPassword, setVerifyPassword] = useState("12345678");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [verifyPassword, setVerifyPassword] = useState("");
+  const [_profile, setProfile]:any = useState(null)
+  const [loading ,setLoading] = useState(false)
+  const changeImg = () => {
+
+  }
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const getProfile = await profile();
+        setProfile(getProfile?.data);
+        setLoading(true);
+        console.log(getProfile?.data);
+        
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
+
+
   return (
     <ScrollView>
       <View>
@@ -30,14 +56,14 @@ const EditProfile = (props: homeScreenProps) => {
           <Text style={styles.changetext}>Change Profile Picture</Text>
         </Pressable>
         <Text style={styles.titles}>Name</Text>
-        <TextInput style={styles.input} onChangeText={setName}/>
+        <TextInput style={styles.input} onChangeText={setName} value={_profile?.name }/>
         <Text style={styles.titles}>Email</Text>
-        <TextInput style={styles.input} onChangeText={setEmail}/>
-        <Text style={styles.titles}>Email</Text>
-        <TextInput style={styles.input} onChangeText={setPassword}/>
-        <Text style={styles.titles}>Email</Text>
-        <TextInput style={styles.input} onChangeText={setVerifyPassword}/>
-        <Pressable>
+        <TextInput style={styles.input} onChangeText={setEmail} value={_profile?.email}/>
+        {/* <Text style={styles.titles}>Password</Text>
+        <TextInput style={styles.input} onChangeText={setPassword} secureTextEntry />
+        <Text style={styles.titles}>Verify Password</Text>
+        <TextInput style={styles.input} onChangeText={setVerifyPassword} secureTextEntry/> */}
+        <Pressable onPress={changeImg}>
           <Text style={styles.changetext}>Update</Text>
         </Pressable>
         
@@ -76,7 +102,8 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderRadius: 6,
     padding:6,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    paddingLeft:15
   },
   titles:{
     marginLeft:30,
