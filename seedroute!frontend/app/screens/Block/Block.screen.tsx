@@ -81,12 +81,12 @@ const Block = (props: homeScreenProps) => {
                   onPress={goToWatering}
                   style={styles.btn}
                 />
-                <Text style={styles.blockName}>
+                <Text style={styles.blockName}>  
                   This is block number {_block?.name}
                 </Text>
                 <Image
                   source={{uri:`http://10.0.2.2:8000/storage/${_plant?.image}`}}
-                  style={styles.img}
+                  style={{width: 250, height: 250, resizeMode: "contain", alignSelf: "center", borderRadius: 6,marginTop: 40,}}
                 />
                 <Text style={styles.yesPlant}>Plant: {_plant?.name}</Text>
                 <Text style={styles.phase}>
