@@ -34,7 +34,6 @@ const EditProfile = (props: homeScreenProps) => {
         const getProfile = await profile();
         setProfile(getProfile?.data);
         setLoading(true);
-        console.log(getProfile?.data);
       } catch (error) {
         console.log(error);
       } finally {
@@ -44,17 +43,20 @@ const EditProfile = (props: homeScreenProps) => {
     getData();
   }, []);
 
-  const handleUpdateUser = async (namet:string,emailt:string,imaget:any) => {
+  const handleUpdateUser = async (
+    namet: string,
+    emailt: string,
+    imaget: any
+  ) => {
     try {
       setLoading(true);
-      console.log('doo');
-      
-      const res = await updateUser(namet, emailt,imaget);
+
+      const res = await updateUser(namet, emailt, imaget);
       props.navigation.goBack();
       return res;
     } catch (error) {
       console.log(error);
-    } finally { 
+    } finally {
       setLoading(false);
     }
   };
@@ -65,24 +67,26 @@ const EditProfile = (props: homeScreenProps) => {
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
+      base64:true
     });
 
     if (!result.cancelled) {
       setImage(result.uri);
     }
-    console.log(typeof(result.uri) );
-    
-    let formdata: any = new FormData()
-    formdata.append('file',{
-      uri:result.uri
-    })
-    setImageFile(formdata)
-    console.log(typeof(formdata) );
-    
-    
-  };
+    console.log( result);
 
-  
+    const fileURL = result.uri;
+    const cleanURL = fileURL.replace("file://", "");
+    let formdata: any = new FormData();
+    formdata.append("file", {
+      uri: cleanURL,
+      type: result.type,
+      name: 'image'
+    });
+    setImageFile(formdata);
+
+    const iimage =  File
+  };
 
   return (
     <ScrollView>
@@ -104,16 +108,16 @@ const EditProfile = (props: homeScreenProps) => {
       <Text style={styles.titles}>Name</Text>
       <TextInput
         style={styles.input}
-        onChangeText={setName}    
+        onChangeText={setName}
         placeholder={_profile?.name}
       />
       <Text style={styles.titles}>Email</Text>
       <TextInput
-        style={styles.input} 
+        style={styles.input}
         onChangeText={setEmail}
         placeholder={_profile?.email}
       />
-      <Pressable onPress={()=>handleUpdateUser(name, email, imageFile)}>
+      <Pressable onPress={() => handleUpdateUser(name, email, imageFile)}>
         <Text style={styles.changetext}>Update</Text>
       </Pressable>
     </ScrollView>

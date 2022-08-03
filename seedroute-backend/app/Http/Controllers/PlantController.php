@@ -67,6 +67,10 @@ class PlantController extends Controller
             $plant->type = $request->type;
             $plant->soil_type = $request->soil_type;
             $plant->number_of_phases = $request->number_of_phases;
+            if ($request->file('image') !== null) {
+                $path = $request->file('image')->store('uploads','public');
+                $plant->image = $path;
+            }
             $plant->update();
 
             return jsonResponse("Plant updated", 200);
