@@ -22,8 +22,6 @@ interface homeScreenProps {
 const EditProfile = (props: homeScreenProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [verifyPassword, setVerifyPassword] = useState("");
   const [_profile, setProfile]: any = useState(null);
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null);
