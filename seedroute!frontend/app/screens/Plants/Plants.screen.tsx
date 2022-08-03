@@ -19,7 +19,7 @@ interface homeScreenProps {
 const Plants = (props: homeScreenProps) => {
   const goInfo = (id : number) => props.navigation.navigate('Plant',{id});
   const [loading,setLoading] = useState(false)
-
+  const [search, setSearch]: any = useState('')
   // const { id } = useParams();
 
     const [_plants, setPlants] = useState([]);
@@ -48,6 +48,7 @@ const Plants = (props: homeScreenProps) => {
         <TextInput
           placeholder="Search for a Plant"
           style={styles.search_input}
+          onChangeText={setSearch}
         />
         <FontAwesomeIcon icon={faSearch} style={styles.icon} />
       </View>
@@ -55,7 +56,20 @@ const Plants = (props: homeScreenProps) => {
       {loading?<Loading/>
       :_plants?<>
       <View style={styles.container}>
-        {_plants?.map((plant: any)=>( 
+        {
+        search.length>0?
+        _plants?.filter((p:any) => p?.name?.includes(search)).map((plant: any)=>( 
+          
+          <Pressable style={styles.plant_card} onPress={()=>{goInfo(plant?.id)}}>
+           <Image
+             source={{uri:`http://10.0.2.2:8000/storage/${plant?.image}`}}
+             style={styles.plant_img}
+           />
+           <Text style={styles.plant_name}>{plant?.name}</Text>
+         </Pressable>
+         ))
+        :
+        _plants?.map((plant: any)=>( 
           
            <Pressable style={styles.plant_card} onPress={()=>{goInfo(plant?.id)}}>
             <Image
