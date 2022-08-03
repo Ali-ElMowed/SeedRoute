@@ -1,105 +1,84 @@
-// // @ts-nocheck
-// import React, {
-//   useState,
-//   useEffect,
-//   useLayoutEffect,
-//   useCallback
-// } from 'react';
-// import { TouchableOpacity, Text } from 'react-native';
-// import { GiftedChat } from 'react-native-gifted-chat';
-// import {
-//   collection,
-//   addDoc,
-//   orderBy,
-//   query,
-//   onSnapshot
-// } from 'firebase/firestore';
-// import { signOut } from 'firebase/auth';
-// import { auth, database } from '../../firebase/firebase';
-// import { useNavigation } from '@react-navigation/native';
-// import { AntDesign } from '@expo/vector-icons';
 
+import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
+import { Bubble, GiftedChat } from "react-native-gifted-chat";
+import { IconButton } from "react-native-paper";
 
-// export default function Chat() {
+interface RoomScreenProps {
+  navigation: any;
+}
+export default function RoomScreen() {
+  const [messages, setMessages]: any = useState([
+    /**
+     * Mock message data
+     */
+    // example of system message
+    {
+      _id: 0,
+      text: "New room created.",
+      createdAt: new Date().getTime(),
+      system: true,
+    },
+    // example of chat message
+    {
+      _id: 1,
+      text: "Henlo!",
+      createdAt: new Date().getTime(),
+      user: {
+        _id: 2,
+        name: "Test User",
+      },
+    },
+  ]);
 
-//   const [messages, setMessages] = useState([]);
-//   const navigation = useNavigation();
+  // helper method that is sends a message
+  function handleSend(newMessage: any = []) {
+    setMessages(GiftedChat.append(messages, newMessage));
+  }
+  function renderBubble(props: RoomScreenProps) {
+    return (
+      // Step 3: return the component
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          right: {
+            // Here is the color change
+            backgroundColor: "#6646ee",
+          },
+        }}
+        textStyle={{
+          right: {
+            color: "#fff",
+          },
+        }}
+      />
+    );
+  }
+  function scrollToBottomComponent() {
+    return (
+      <View style={styles.bottomComponentContainer}>
+        <IconButton icon="chevron-double-down" size={36} color="#6646ee" />
+      </View>
+    );
+  }
 
-// const onSignOut = () => {
-//     signOut(auth).catch(error => console.log('Error logging out: ', error));
-//   };
+  return (
+    <GiftedChat
+      messages={messages}
+      onSend={(newMessage) => handleSend(newMessage)}
+      user={{ _id: 1, name: "User Test" }}
+      renderBubble={() => renderBubble}
+      placeholder="Type your message here..."
+      showUserAvatar
+      alwaysShowSend
+      scrollToBottom
+      scrollToBottomComponent={scrollToBottomComponent}
+    />
+  );
+}
+const styles = StyleSheet.create({
+    bottomComponentContainer:{
 
-//   useLayoutEffect(() => {
-//       navigation.setOptions({
-//         headerRight: () => (
-//           <TouchableOpacity
-//             style={{
-//               marginRight: 10
-//             }}
-//             onPress={onSignOut}
-//           >
-//             <AntDesign name="logout" size={24} color={'gray'} style={{marginRight: 10}}/>
-//           </TouchableOpacity>
-//         )
-//       });
-//     }, [navigation]);
+    }
 
-//   useLayoutEffect(() => {
-
-//       const collectionRef = collection(database, 'chats');
-//       const q = query(collectionRef, orderBy('createdAt', 'desc'));
-
-//   const unsubscribe = onSnapshot(q, querySnapshot => {
-//       console.log('querySnapshot unsusbscribe');
-//         setMessages(
-//           querySnapshot.docs.map(doc => ({
-//             _id: doc.data()._id,
-//             createdAt: doc.data().createdAt.toDate(),
-//             text: doc.data().text,
-//             user: doc.data().user
-//           }))
-//         );
-//       });
-//   return unsubscribe;
-//     }, []);
-
-//   const onSend = useCallback((messages = []) => {
-//       setMessages(previousMessages =>
-//         GiftedChat.append(previousMessages, messages)
-//       );
-//       // setMessages([...messages, ...messages]);
-//       const { _id, createdAt, text, user } = messages[0];    
-//       addDoc(collection(database, 'chats'), {
-//         _id,
-//         createdAt,
-//         text,
-//         user
-//       });
-//     }, []);
-
-//     return (
-//       // <>
-//       //   {messages.map(message => (
-//       //     <Text key={message._id}>{message.text}</Text>
-//       //   ))}
-//       // </>
-//       <GiftedChat
-//         messages={messages}
-//         showAvatarForEveryMessage={false}
-//         showUserAvatar={false}
-//         onSend={messages => onSend(messages)}
-//         messagesContainerStyle={{
-//           backgroundColor: '#fff'
-//         }}
-//         textInputStyle={{
-//           backgroundColor: '#fff',
-//           borderRadius: 20,
-//         }}
-//         user={{
-//           _id: auth?.currentUser?.email,
-//           avatar: 'https://i.pravatar.cc/300'
-//         }}
-//       />
-//     );
-// }
-
+})
