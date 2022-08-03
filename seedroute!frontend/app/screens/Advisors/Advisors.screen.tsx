@@ -39,7 +39,7 @@ const Advisors = (props: homeScreenProps) => {
 
 
 
-  // STILL HARDCODED It needs to be done
+
 
   return (
     <View style={styles.container}>
@@ -51,7 +51,7 @@ const Advisors = (props: homeScreenProps) => {
       <View style={styles.container}>
       { _advisors.map((advisor: any)=>( 
 
-      <Pressable style={styles.advisor_card}>
+      <Pressable style={styles.advisor_card}> 
         <Image
           source={require("../../../assets/images/avatar.jpg")}
           style={styles.advisor_img}
