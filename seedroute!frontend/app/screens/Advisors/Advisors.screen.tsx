@@ -16,7 +16,7 @@ interface homeScreenProps {
 const Advisors = (props: homeScreenProps) => {
   const goAdvInfo = () => props.navigation.navigate("");
 
-  const [_advisors, setaAdvisors]:any = useState([]);
+  const [_advisors, setaAdvisors] = useState([]);
   const [loading,setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,17 +49,17 @@ const Advisors = (props: homeScreenProps) => {
       {loading ? <Loading/> :
       _advisors ? 
       <View style={styles.container}>
-      { _advisors.map((advisor: any)=>( 
+      { _advisors?.map((advisor: any)=>( 
 
-      <Pressable style={styles.advisor_card}> 
+      <Pressable style={styles.advisor_card}>  
         <Image
           source={require("../../../assets/images/avatar.jpg")}
           style={styles.advisor_img}
         />
-        <Text style={styles.advisor_name}>{_advisors?.name}</Text>
-        <Text style={styles.advisor_ex}>Expreience: {_advisors?.ex_years} years</Text>
-        <Text style={styles.advisor_ex}>Job: {_advisors?.job}</Text>
-        <Text style={styles.advisor_ex}>Bio: {_advisors?.bio}</Text>
+        <Text style={styles.advisor_name}>{advisor?.name}</Text>
+        <Text style={styles.advisor_ex}>Expreience: {advisor?.ex_years} years</Text>
+        <Text style={styles.advisor_ex}>Job: {advisor?.job}</Text>
+        <Text style={styles.advisor_ex}>Bio: {advisor?.bio}</Text>
       </Pressable>
       ))} 
       </View> : <Text> No Advisors found</Text>
