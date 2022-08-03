@@ -20,11 +20,13 @@
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
-import {initializeApp} from 'firebase/app';
-import {getAuth} from 'firebase/auth';
-import { getFirestore} from 'firebase/firestore'
+import firebase from 'firebase';
+import '@firebase/auth';
+import '@firebase/firestore';
 import Constants from 'expo-constants'
+import ChatKitty from 'chatkitty';
 
+export const kitty = ChatKitty.getInstance('b205ac84-32c0-4e29-b393-1f808d21e0de');
 const firebaseConfig = {
   apiKey : Constants.manifest?.extra?.apiKey,
   authDomain : Constants.manifest?.extra?.authDomain,
@@ -36,7 +38,9 @@ const firebaseConfig = {
 
 }
 
-initializeApp(firebaseConfig)
-export const auth = getAuth()
-export const database = getFirestore()
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+export { firebase };
 
