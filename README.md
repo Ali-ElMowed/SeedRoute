@@ -1,5 +1,5 @@
 # SeedRoute
-![title1](https://user-images.githubusercontent.com/97544165/182354016-47ba2639-2c1f-4887-86dc-111207452e55.png)
+![title1](https://user-images.githubusercontent.com/97544165/182653531-26e571ed-da62-4f34-9f2d-ee2cc0b5eccb.png)
 
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
@@ -14,8 +14,8 @@
 >2.Informs the user about different types of plants giving with tips and recognitions.<br>
 >3.Provides a space for the user to contact an advisor to ask questions.
 
+![title3](https://user-images.githubusercontent.com/97544165/182656884-0e9cb0ea-9258-46a7-b4a2-d14af31ca8c0.png)
 
-![title3](https://user-images.githubusercontent.com/97544165/182354025-22a6968f-65e0-4c9e-bed5-a76e4a5d6dfd.png)
 
 | Loading  | Login  |
 | -----------------| -----|
