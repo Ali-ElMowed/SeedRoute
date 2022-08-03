@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
+import { profile } from "../../Api/auth";
 import { getSelectedBlocks } from "../../Api/blocks";
 import Block from "../../Components/Block";
 import Btn from "../../Components/Btn";
@@ -134,6 +135,8 @@ const Profile = (props: homeScreenProps) => {
       value: 0,
     },
   ]);
+  const [_profile, setProfile]: any = useState(null);
+
   const goToBlock = (blockName:number) => {
     dispatch(set({
       name:blockName
@@ -168,12 +171,28 @@ const Profile = (props: homeScreenProps) => {
     getBlocks();
   }, []);
 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const getProfile = await profile();
+        setProfile(getProfile?.data);
+        setLoading(true);
+        console.log(getProfile?.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <ScrollView>
       <View>
         <View style={styles.header}>
           <Image
-            source={require("../../../assets/images/avatar.jpg")}
+            source={{uri:`http://10.0.2.2:8000/storage/${_profile?.image}`}}
             style={{
               width: 70,
               height: 70,
@@ -182,7 +201,7 @@ const Profile = (props: homeScreenProps) => {
               marginRight: 0,
             }}
           />
-          <Text style={styles.userName}>{user}</Text>
+          <Text style={styles.userName}>{_profile?.name}</Text>
           <Btn text="Edit" onPress={goEditProfile} style={styles.editProBtn} />
         </View>
         <Btn text="Edit Sketch" onPress={goToSketch} style={styles.editBtn} />
