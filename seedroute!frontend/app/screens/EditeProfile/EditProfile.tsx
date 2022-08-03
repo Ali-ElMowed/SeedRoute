@@ -15,6 +15,7 @@ import {
 import { profile } from "../../Api/auth";
 import * as ImagePicker from "expo-image-picker";
 import Constants from "expo-constants";
+import { updateUser } from "../../Api/profile";
 
 interface homeScreenProps {
   navigation: any;
@@ -24,9 +25,8 @@ const EditProfile = (props: homeScreenProps) => {
   const [email, setEmail] = useState("");
   const [_profile, setProfile]: any = useState(null);
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState(null);
-
-  
+  const [image, setImage]: any = useState(null);
+  const [imageFile, setImageFile]: any = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -44,48 +44,78 @@ const EditProfile = (props: homeScreenProps) => {
     getData();
   }, []);
 
+  const handleUpdateUser = async (namet:string,emailt:string,imaget:any) => {
+    try {
+      setLoading(true);
+      console.log('doo');
+      
+      const res = await updateUser(namet, emailt,imaget);
+      props.navigation.goBack();
+      return res;
+    } catch (error) {
+      console.log(error);
+    } finally { 
+      setLoading(false);
+    }
+  };
+
   const pickImage = async () => {
-    let result : any = await ImagePicker.launchImageLibraryAsync({
+    let result: any = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.cancelled) {
       setImage(result.uri);
-      console.log("++++++0"+image);
-      
     }
+    console.log(typeof(result.uri) );
+    
+    let formdata: any = new FormData()
+    formdata.append('file',{
+      uri:result.uri
+    })
+    setImageFile(formdata)
+    console.log(typeof(formdata) );
+    
+    
   };
 
   
 
   return (
     <ScrollView>
-    
-    {image && <Image source={{ uri: image }} style={{ width: 200, height: 200,alignSelf: 'center', borderRadius: 100, marginTop: 30,}} />}
-        <Pressable onPress={pickImage}
-        >
-          <Text style={styles.changetext}>Change Profile Picture</Text>
-        </Pressable>
-        <Text style={styles.titles}>Name</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setName}
-          value={_profile?.name}
+      {image && (
+        <Image
+          source={{ uri: image }}
+          style={{
+            width: 200,
+            height: 200,
+            alignSelf: "center",
+            borderRadius: 100,
+            marginTop: 30,
+          }}
         />
-        <Text style={styles.titles}>Email</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setEmail}
-          value={_profile?.email}
-        />
-        <Pressable>
-          <Text style={styles.changetext}>Update</Text>
-        </Pressable>
+      )}
+      <Pressable onPress={pickImage}>
+        <Text style={styles.changetext}>Change Profile Picture</Text>
+      </Pressable>
+      <Text style={styles.titles}>Name</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={setName}    
+        placeholder={_profile?.name}
+      />
+      <Text style={styles.titles}>Email</Text>
+      <TextInput
+        style={styles.input} 
+        onChangeText={setEmail}
+        placeholder={_profile?.email}
+      />
+      <Pressable onPress={()=>handleUpdateUser(name, email, imageFile)}>
+        <Text style={styles.changetext}>Update</Text>
+      </Pressable>
     </ScrollView>
   );
 };
@@ -127,6 +157,5 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginBottom: 5,
   },
-  
 });
 export default EditProfile;
