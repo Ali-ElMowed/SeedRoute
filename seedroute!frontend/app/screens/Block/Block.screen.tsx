@@ -16,6 +16,7 @@ const Block = (props: homeScreenProps) => {
   const [_block, setBlock]: any = useState({});
   const [_plant, setPlant]: any = useState(null);
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     const getData = async () => {
@@ -23,7 +24,6 @@ const Block = (props: homeScreenProps) => {
         setLoading(true);
         const { name }: any = blockState;
         const blockByName = await getSelectedBlockByName(name);
-        console.log("block fetched 1");
 
         setBlock(blockByName?.data?.data);
       } catch (error) {
@@ -35,14 +35,15 @@ const Block = (props: homeScreenProps) => {
     getData();
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { 
     const getData = async (id: number) => {
       try {
         setLoading(true);
         const plantById = await getPlantById(_block?.plant_id);
-        console.log("plant fetched 1");
 
         setPlant(plantById?.data?.data);
+        console.log(plantById?.data?.data);
+        
       } catch (error) {
         console.log(error);
       } finally {

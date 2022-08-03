@@ -19,7 +19,7 @@ const Profile = (props: homeScreenProps) => {
   const goEditProfile = () => {
     props.navigation.navigate("EditProfile");
   };
-  const [user,setUser] = useState('')
+  
   const [loading, setLoading] = useState(false);
   const [blocks, setBlocks]: any = useState([
     {
@@ -146,7 +146,7 @@ const Profile = (props: homeScreenProps) => {
   useEffect(() => {
     const getBlocks = async () => {
       try {
-        setUser( JSON.parse(await AsyncStorage.getItem('user'||'')|| '').user.name )
+        
         setLoading(true);
         const res = await getSelectedBlocks();
 
