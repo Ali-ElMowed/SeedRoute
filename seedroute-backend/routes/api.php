@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/register', [JWTController::class, 'register']);
-Route::post('/login', [JWTController::class, 'login']);
+Route::post('/login', [JWTController::class, 'login'])->name('login');
 
 Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::post('/logout', [JWTController::class, 'logout']);
@@ -34,9 +34,7 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::get('/profile', [JWTController::class, 'profile']);
 
     //Plants routes
-    Route::post('/addPlant', [PlantController::class, 'addPlant']);
-    Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
-    Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
+
     Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
 
     //Calendars routes
@@ -53,9 +51,12 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
 
     Route::get('getAdvisor/{id?}', [AdvisorController::class, 'getAdvisors']);
 
+    Route::put('/updateUser', [JWTController::class, 'updateUserTest']);
     Route::group(['middleware' => 'admin'], function () {
-
-        Route::post('/updateUser', [JWTController::class, 'updateUser']);
+        Route::post('/addPlant', [PlantController::class, 'addPlant']);
+        Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
+        Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
+        Route::post('/addAdvisor', [AdvisorController::class, 'addAdvisor']);
     });
 
 
