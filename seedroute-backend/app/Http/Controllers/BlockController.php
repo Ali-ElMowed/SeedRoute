@@ -11,10 +11,7 @@ use Illuminate\Http\Request;
 class BlockController extends Controller
 {
 
-    /*
-    Discription : Get All Blocks Api
-    @response blocks collection
-    */
+    //Function to get all blocks
     public function getBlocks()
     {
         try {
@@ -25,6 +22,8 @@ class BlockController extends Controller
         }
     }
 
+
+    //Function to store blocks selected by user
     public function storeBlocks(Request $request)
     {
         try {
@@ -47,6 +46,8 @@ class BlockController extends Controller
         }
     }
 
+
+    //Function to get the selected blocks by user
     public function getSelectedBlocks($name = null)
     {
         $user = auth()->user()->id;
@@ -59,6 +60,9 @@ class BlockController extends Controller
         return jsonResponse("blocks found", 200, $blocks);
     }
 
+
+
+    //Function to add plant_id in a specific selected block
     public function doPlant(Request $request){
 
         $block = BlockSelected::where("user_id",auth()->id())->where('block_id',$request->block_id)->update([
