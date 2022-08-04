@@ -1,13 +1,23 @@
 // Include libraries needed
-#include < Arduino.h > 
-#include " Adafruit_BLE.h " 
+#include < Arduino.h >
+#include " Adafruit_BLE.h "
 #include " Adafruit_BluefruitLE_UART.h "
-#include " BluefruitConfig.h " 
-#define FACTORYRESET_ENABLE 
-#define MINIMUM_FIRMWARE_VERSION " 0.6.6 " 
+#include " BluefruitConfig.h "
+#define FACTORYRESET_ENABLE
+#define MINIMUM_FIRMWARE_VERSION " 0.6.6 "
 #define MODE_LED_BEHAVIOUR " MODE "
 #include <SoftwareSerial.h>
 SoftwareSerial SoftSerial(2, 3);
+
+int counterChannel;
+int elevationChannel;
+
+int counter = 0;
+
+SoftwareSerial bluefruitSS = SoftwareSerial(BLUEFRUIT_SWUART_TXD_PIN, BLUEFRUIT_SWUART_RXD_PIN);
+Adafruit_BluefruitLE_UART ble(bluefruitSS, BLUEFRUIT_UART_MODE_PIN,
+                              BLUEFRUIT_UART_CTS_PIN, BLUEFRUIT_UART_RTS_PIN);
+
 const int RELAY_PIN = A5;
 #define POWER_PIN 7
 #define SIGNAL_PIN A5
