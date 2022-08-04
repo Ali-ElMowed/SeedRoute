@@ -30,21 +30,23 @@ void setup()
   Serial.begin(9600);
   pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT
   digitalWrite(POWER_PIN, LOW); // turn the sensor OFF
-  while(!Serial) {
+  while (!Serial)
+  {
     delay(500);
   }
   Serial.begin(115200);
 
-  if ( !ble.begin(VERBOSE_MODE) )
+  if (!ble.begin(VERBOSE_MODE))
   {
     error(F("Couldn't find Bluefruit, make sure it's in CoMmanD mode & check wiring?"));
   }
 
-  if ( FACTORYRESET_ENABLE )
+  if (FACTORYRESET_ENABLE)
   {
     /* Perform a factory reset to make sure everything is in a known state */
     Serial.println(F("Performing a factory reset: "));
-    if ( !ble.factoryReset() ){
+    if (!ble.factoryReset())
+    {
       error(F("Couldn't factory reset"));
     }
   }
@@ -53,9 +55,21 @@ void setup()
 
   Serial.println("Requesting Bluefruit info:");
 
-   ble.info();
+  ble.info();
 
   ble.reset();
+
+  counterChannel = ble.println(F("AT+GATTADDCHAR=UUID=0x2A19,PROPERTIES=0x10,MIN_LEN=1,DESCRIPTION=Counter,VALUE=100"));
+  if (counterChannel == 0)
+  {
+    error(F("Error adding characteristic"));
+  }
+
+  elevationChannel = ble.println(F("AT+GATTADDCHAR=UUID=0x2A6C,PROPERTIES=0x08,MIN_LEN=1,DESCRIPTION=Elevation,VALUE=0"));
+  if (elevationChannel == 0)
+  {
+    error(F("Error adding characteristic"));
+  }
 }
 
 // the loop function runs over and over again forever
