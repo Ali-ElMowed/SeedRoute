@@ -8,12 +8,11 @@ import Sketch from "../screens/Sketch/Sketch.screen";
 import Plant from "../screens/Plant/Plant.screen";
 import Block from "../screens/Block/Block.screen";
 import { useAppSelector } from "../redux/hooks";
-import Advisors from "../screens/Advisors/Advisors.screen";
-// import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 import AddRoom from "../screens/AddRoom/AddRoom.Screen";
 import DoPlant from "../screens/DoPlant/DoPlant";
 import EditProfile from "../screens/EditeProfile/EditProfile";
 import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
+import Arduino from "../arduino/arduino";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -51,6 +50,7 @@ return (
       <Screen name="AddRoom" component={AddRoom}></Screen>
       <Screen name="DoPlant" component={DoPlant}></Screen>
       <Screen name="EditProfile" component={EditProfile}></Screen>
+      <Screen name="Arduino" component={Arduino}></Screen>
     </Navigator>
   </NavigationContainer>
 )};
