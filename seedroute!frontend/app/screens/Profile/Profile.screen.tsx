@@ -214,8 +214,6 @@ const Profile = (props: homeScreenProps) => {
             />
           ))}
         </View>
-
-        {/* <Button title="BACK" onPress={goBackk}></Button> */}
       </View>
     </ScrollView>
   );
