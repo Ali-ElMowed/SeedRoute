@@ -14,56 +14,54 @@ interface homeScreenProps {
   navigation: any;
 }
 const Advisors = (props: homeScreenProps) => {
-  const goAdvInfo = () => props.navigation.navigate("");
+  const goChat = () => props.navigation.navigate("ChatRoom");
+
 
   const [_advisors, setaAdvisors] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-      const getData = async () => {
-          try {
-              setLoading(true)
-              const allAdvisors = await getAdvisors()
-              setaAdvisors(allAdvisors?.data?.data)
-              console.log(allAdvisors?.data?.data);
-              
-          } catch (error) {
-              console.log(error);
-          } finally{
-              setLoading(false)
-          }
+    const getData = async () => {
+      try {
+        setLoading(true);
+        const allAdvisors = await getAdvisors();
+        setaAdvisors(allAdvisors?.data?.data);
+        console.log(allAdvisors?.data?.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
       }
-      getData()
-  }, [])
-
-
-
-
-
+    };
+    getData();
+  }, []);
 
   return (
     <View style={styles.container}>
       {/* <Btn text="create a room" style={styles.btn} onPress={()=>props.navigation.navigate("AddRoom")}/> */}
 
-
-      {loading ? <Loading/> :
-      _advisors ? 
-      <View style={styles.container}>
-      { _advisors?.map((advisor: any)=>( 
-
-      <Pressable style={styles.advisor_card}>  
-        <Image
-          source={require("../../../assets/images/avatar.jpg")}
-          style={styles.advisor_img}
-        />
-        <Text style={styles.advisor_name}>{advisor?.name}</Text>
-        <Text style={styles.advisor_ex}>Expreience: {advisor?.ex_years} years</Text>
-        <Text style={styles.advisor_ex}>Job: {advisor?.job}</Text>
-        <Text style={styles.advisor_ex}>Bio: {advisor?.bio}</Text>
-      </Pressable>
-      ))} 
-      </View> : <Text> No Advisors found</Text>
-      }
+      {loading ? (
+        <Loading />
+      ) : _advisors ? (
+        <View style={styles.container}>
+          {_advisors?.map((advisor: any) => (
+            <Pressable style={styles.advisor_card} onPress={goChat}>
+              <Image
+                source={require("../../../assets/images/avatar.jpg")}
+                style={styles.advisor_img}
+              />
+              <Text style={styles.advisor_name}>{advisor?.name}</Text>
+              <Text style={styles.advisor_ex}>
+                Expreience: {advisor?.ex_years} years
+              </Text>
+              <Text style={styles.advisor_ex}>Job: {advisor?.job}</Text>
+              <Text style={styles.advisor_ex}>Bio: {advisor?.bio}</Text>
+            </Pressable>
+          ))}
+        </View>
+      ) : (
+        <Text> No Advisors found</Text>
+      )}
     </View>
   );
 };
@@ -100,8 +98,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontWeight: "bold",
   },
-  btn:{
-
-  }
+  btn: {},
 });
 export default Advisors;
