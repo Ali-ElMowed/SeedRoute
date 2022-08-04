@@ -75,10 +75,10 @@ const DoPlant = (props: homeScreenProps) => {
                 style={styles.plant_card}
                 onPress={()=>
                   handlePickingPlant(name,plant?.id)
-                }
+                } 
               >
                 <Image
-                  source={require("../../../assets/images/symbol1.jpg")}
+                  source={ {uri: `http://10.0.2.2:8000/storage/${plant?.image}`}}
                   style={styles.plant_img}
                 />
                 <Text style={styles.plant_name}>{plant?.name}</Text>
