@@ -30,7 +30,6 @@ const LoginScreen = (props: loginScreenProps) => {
           setLoading(true)
           const res = await login(email, password);
           dispatch( set(res?.data))
-          // await localStorage.setItem("user", JSON.stringify(res?.data))
           const user = await AsyncStorage.setItem('user',JSON.stringify(res?.data))
 
           if(res?.status === 200){
