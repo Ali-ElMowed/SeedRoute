@@ -7,7 +7,6 @@ import HomeScreen from "../screens/Home/Home.screen";
 import Sketch from "../screens/Sketch/Sketch.screen";
 import Plant from "../screens/Plant/Plant.screen";
 import Block from "../screens/Block/Block.screen";
-import Watering from "../screens/Watering/Watering.screen";
 import { useAppSelector } from "../redux/hooks";
 import Advisors from "../screens/Advisors/Advisors.screen";
 // import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
@@ -48,7 +47,6 @@ return (
       <Screen name="Register" component={Register}></Screen>
       <Screen name="Plant" component={Plant}></Screen>
       <Screen name="Block" component={Block}></Screen>
-      <Screen name="Watering" component={Watering}></Screen>
       <Screen name="ChatRoom" component={ChatRoom}></Screen>
       <Screen name="AddRoom" component={AddRoom}></Screen>
       <Screen name="DoPlant" component={DoPlant}></Screen>
