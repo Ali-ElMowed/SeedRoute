@@ -57,7 +57,6 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
         Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
         Route::post('/updatePlant/{id}', [PlantController::class, 'updatePlant']);
         Route::post('/addAdvisor', [AdvisorController::class, 'addAdvisor']);
+        Route::delete('/deleteAdvisor/{id}', [CalendarController::class, 'destroyAdvisor']);
     });
-
-
 });
