@@ -14,6 +14,11 @@
 >2.Informs the user about different types of plants giving with tips and recognitions.<br>
 >3.Provides a space for the user to contact an advisor to ask questions.
 
+### User Stories
+- As a user, I want to find wider 
+- As a user, I want to browsse ablums, so that I can find quick links
+- As a user, I want to browsse ablums, so that I can find quick links
+
 ![title3](https://user-images.githubusercontent.com/97544165/182656884-0e9cb0ea-9258-46a7-b4a2-d14af31ca8c0.png)
 
 
