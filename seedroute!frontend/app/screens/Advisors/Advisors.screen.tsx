@@ -38,7 +38,6 @@ const Advisors = (props: homeScreenProps) => {
 
   return (
     <View style={styles.container}>
-      {/* <Btn text="create a room" style={styles.btn} onPress={()=>props.navigation.navigate("AddRoom")}/> */}
 
       {loading ? (
         <Loading />
