@@ -30,6 +30,32 @@ void setup()
   Serial.begin(9600);
   pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT
   digitalWrite(POWER_PIN, LOW); // turn the sensor OFF
+  while(!Serial) {
+    delay(500);
+  }
+  Serial.begin(115200);
+
+  if ( !ble.begin(VERBOSE_MODE) )
+  {
+    error(F("Couldn't find Bluefruit, make sure it's in CoMmanD mode & check wiring?"));
+  }
+
+  if ( FACTORYRESET_ENABLE )
+  {
+    /* Perform a factory reset to make sure everything is in a known state */
+    Serial.println(F("Performing a factory reset: "));
+    if ( !ble.factoryReset() ){
+      error(F("Couldn't factory reset"));
+    }
+  }
+
+  ble.echo(false);
+
+  Serial.println("Requesting Bluefruit info:");
+
+   ble.info();
+
+  ble.reset();
 }
 
 // the loop function runs over and over again forever
