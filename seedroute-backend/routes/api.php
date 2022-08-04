@@ -33,25 +33,23 @@ Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::post('/refresh', [JWTController::class, 'refresh']);
     Route::get('/profile', [JWTController::class, 'profile']);
 
-    //Plants routes
-
+    //Plants routes by users
     Route::get('/getPlants/{id?}', [PlantController::class, 'getPlants']);
 
-    //Calendars routes
-    Route::get('/getCalendars/{id?}', [CalendarController::class, 'getCalendars']);
-    Route::post('/addCalendar', [CalendarController::class, 'addCalendar']);
-    Route::delete('/deleteCalendar/{id}', [CalendarController::class, 'destroyCalendar']);
-    Route::post('/updateCalendar/{id}', [CalendarController::class, 'updateCalendar']);
-
-    //blocks
+    //blocks by users
     Route::get('getBlocks', [BlockController::class, 'getBlocks']);
     Route::post('storeBlocksSelected', [BlockController::class, 'storeBlocks']);
     Route::get('getSelectedBlocks/{id?}', [BlockController::class, 'getSelectedBlocks']);
     Route::post('/doPlant', [BlockController::class, 'doPlant']);
 
+    //advisors routes by user
     Route::get('getAdvisor/{id?}', [AdvisorController::class, 'getAdvisors']);
 
+    //users routes by usrer
     Route::put('/updateUser', [JWTController::class, 'updateUserTest']);
+
+
+    //admin users 
     Route::group(['middleware' => 'admin'], function () {
         Route::post('/addPlant', [PlantController::class, 'addPlant']);
         Route::delete('/deletePlant/{id}', [PlantController::class, 'destroyPlant']);
