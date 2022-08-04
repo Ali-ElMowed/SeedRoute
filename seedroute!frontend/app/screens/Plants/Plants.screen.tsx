@@ -20,7 +20,6 @@ const Plants = (props: homeScreenProps) => {
   const goInfo = (id : number) => props.navigation.navigate('Plant',{id});
   const [loading,setLoading] = useState(false)
   const [search, setSearch]: any = useState('')
-  // const { id } = useParams();
 
     const [_plants, setPlants] = useState([]);
     useEffect(() => {
