@@ -13,8 +13,6 @@ interface RegisterScreenProps {
   }
   
   const Register = (props: RegisterScreenProps) => {
-  
-    // const goSketch = () => props.navigation.navigate("Sketch");
     const [fname, setFname] = useState("test");
     const [lname, setLname] = useState("test");
     const [email, setEmail] = useState("test@gmail.com");
@@ -124,11 +122,6 @@ interface RegisterScreenProps {
         width:300,
         paddingLeft:20
       },
-      // nameinput:{
-      //   marginLeft:5,
-      //   marginRight:5,
-      //   width:145
-      // },
       btn:{
         backgroundColor: '#0D9B81',
         borderColor: 'white',
