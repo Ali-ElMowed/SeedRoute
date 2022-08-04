@@ -168,8 +168,6 @@ const Sketch = (props: homeScreenProps) => {
             />
           ))}
         </View>
-
-        {/* <Button title="BACK" onPress={goBackk}></Button> */}
         {loading && <Loading/>}
         <Btn text="Next" onPress={handleSelection} style={styles.nxtBtn} />
       </View>
