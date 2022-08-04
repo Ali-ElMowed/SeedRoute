@@ -1,5 +1,5 @@
 //ts
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -16,6 +16,7 @@ import { profile } from "../../Api/auth";
 import * as ImagePicker from "expo-image-picker";
 import Constants from "expo-constants";
 import { updateUser } from "../../Api/profile";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface homeScreenProps {
   navigation: any;
@@ -26,7 +27,6 @@ const EditProfile = (props: homeScreenProps) => {
   const [_profile, setProfile]: any = useState(null);
   const [loading, setLoading] = useState(false);
   const [image, setImage]: any = useState(null);
-  const [imageFile, setImageFile]: any = useState(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -43,15 +43,13 @@ const EditProfile = (props: homeScreenProps) => {
     getData();
   }, []);
 
-  const handleUpdateUser = async (
-    namet: string,
-    emailt: string,
-    imaget: any
-  ) => {
+  const handleUpdateUser = useCallback(async () => {
     try {
       setLoading(true);
 
-      const res = await updateUser(namet, emailt, imaget);
+      const res = await updateUser(name, email, "image");
+      console.log("hi");
+
       props.navigation.goBack();
       return res;
     } catch (error) {
@@ -59,7 +57,8 @@ const EditProfile = (props: homeScreenProps) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [name, email, image]);
+
 
   const pickImage = async () => {
     let result: any = await ImagePicker.launchImageLibraryAsync({
@@ -67,25 +66,13 @@ const EditProfile = (props: homeScreenProps) => {
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
-      base64:true
+      // base64: true,
     });
 
     if (!result.cancelled) {
       setImage(result.uri);
     }
-    console.log( result);
-
-    const fileURL = result.uri;
-    const cleanURL = fileURL.replace("file://", "");
-    let formdata: any = new FormData();
-    formdata.append("file", {
-      uri: cleanURL,
-      type: result.type,
-      name: 'image'
-    });
-    setImageFile(formdata);
-
-    const iimage =  File
+    console.log(result);
   };
 
   return (
@@ -110,14 +97,16 @@ const EditProfile = (props: homeScreenProps) => {
         style={styles.input}
         onChangeText={setName}
         placeholder={_profile?.name}
+        defaultValue={_profile?.name}
       />
       <Text style={styles.titles}>Email</Text>
       <TextInput
         style={styles.input}
         onChangeText={setEmail}
         placeholder={_profile?.email}
+        defaultValue={_profile?.email}
       />
-      <Pressable onPress={() => handleUpdateUser(name, email, imageFile)}>
+      <Pressable onPress={() => handleUpdateUser()}>
         <Text style={styles.changetext}>Update</Text>
       </Pressable>
     </ScrollView>
