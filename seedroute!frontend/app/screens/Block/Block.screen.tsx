@@ -53,7 +53,7 @@ const Block = (props: homeScreenProps) => {
     getData(_block?.plant_id);
   }, [_block]);
 
-  const goToWatering = () => props.navigation.navigate("Watering");
+  const goToWatering = () => props.navigation.navigate("Arduino");
   const doPlant = () => props.navigation.navigate("DoPlant");
 
   return (
@@ -67,7 +67,7 @@ const Block = (props: homeScreenProps) => {
               <View>
                 <Text style={styles.noplant}>
                   This Block is ready To be Planted
-                </Text>
+                </Text> 
                 <Btn
                   text="Plant"
                   style={styles.btn}
