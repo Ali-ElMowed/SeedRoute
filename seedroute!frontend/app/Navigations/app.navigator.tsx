@@ -14,6 +14,7 @@ import Advisors from "../screens/Advisors/Advisors.screen";
 import AddRoom from "../screens/AddRoom/AddRoom.Screen";
 import DoPlant from "../screens/DoPlant/DoPlant";
 import EditProfile from "../screens/EditeProfile/EditProfile";
+import ChatRoom from "../screens/ChatRoom/ChatRoom.screen";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -48,7 +49,7 @@ return (
       <Screen name="Plant" component={Plant}></Screen>
       <Screen name="Block" component={Block}></Screen>
       <Screen name="Watering" component={Watering}></Screen>
-      {/* <Screen name="ChatRoom" component={ChatRoom}></Screen> */}
+      <Screen name="ChatRoom" component={ChatRoom}></Screen>
       <Screen name="AddRoom" component={AddRoom}></Screen>
       <Screen name="DoPlant" component={DoPlant}></Screen>
       <Screen name="EditProfile" component={EditProfile}></Screen>
