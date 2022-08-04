@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdvisorController extends Controller
 {
-    //
+    //Function to get advisors
     public function getAdvisors($id = null)
     {
         if ($id != null) {
@@ -18,6 +18,8 @@ class AdvisorController extends Controller
 
         return jsonResponse("plants found", 200, $advisor);
     }
+
+    //Function to add make user advisor
     public function addAdvisor(Request $request)
     {
         $advisor = User::where('email',$request->email)->get();
@@ -33,7 +35,6 @@ class AdvisorController extends Controller
     //function to delete plant
     public function destroyAdvisor($id)
     {
-
         $advisor = User::find($id);
 
         if ($advisor) {
