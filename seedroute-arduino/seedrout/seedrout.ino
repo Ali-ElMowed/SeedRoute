@@ -70,6 +70,17 @@ void setup()
   {
     error(F("Error adding characteristic"));
   }
+
+  ble.reset();
+  Serial.println();
+
+  ble.verbose(false);
+
+  while (ble.isConnected() && counter= 3) {
+      digitalWrite(A2, HIGH);
+      counter ++
+  }
+  digitalWrite(A2, LOW);
 }
 
 // the loop function runs over and over again forever
