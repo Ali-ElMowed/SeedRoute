@@ -4,7 +4,7 @@
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-**[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/julescript/well_app#wireframes) • [TECH STACK](https://github.com/julescript/well_app#tech) • [IMPLEMENTATION](https://github.com/julescript/well_app#implementation) • [HOW TO RUN?](https://github.com/julescript/well_app#run)**
+**[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 <img src="./README/title2.png" id="project-philosophy"/>
 
