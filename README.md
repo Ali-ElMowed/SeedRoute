@@ -4,8 +4,6 @@
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute#-wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute#-tech-stack) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute#-impplementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute#-how-to-run)**
-
 ![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png#project-philosophy)
 
 >The SeedRoute app is a smart seeding system that assists amateur farmers through their planting experience.
