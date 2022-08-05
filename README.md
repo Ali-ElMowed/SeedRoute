@@ -56,15 +56,17 @@
 
 Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
-- This project uses the React Native. 
+- This project uses the [React Native](https://reactnative.dev/). Which is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications.
 
-- For persistent storage (database), the app uses the SQL.
+- This project uses [TypeScript](https://www.typescriptlang.org/). Which is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+- 
+- For persistent storage (database), the app uses the [SQL](https://www.w3schools.com/sql/). Which is a standard language for storing, manipulating and retrieving data in databases.
 
-- To send local push notifications, the app uses the Expo Notification
+- To send local push notifications, the app uses the [Expo Notification](https://docs.expo.dev/versions/latest/sdk/notifications/). Which is provides an API to fetch push notification tokens and to present, schedule, receive and respond to notifications.
   
-- For Chatting the app uses Firebase, Firestore and Gifted Chat.
+- For Chatting the app uses [Firebase, Firestore](https://firebase.google.com/?gclid=CjwKCAjw3K2XBhAzEiwAmmgrAjkmh7XHKTv9wc7_6jIDtMuggQHsrSePnTIpqrxRkGXWxTwemlRpFxoCZ8YQAvD_BwE&gclsrc=aw.ds) and [Gifted Chat](https://www.npmjs.com/package/react-native-gifted-chat). Which is an app development platform that helps you build and grow apps and games users love . Backed by Google and trusted by millions of businesses around the world .
 
-- And for Hardwares the app uses arduino with water pump.
+- And for Hardwares the app uses arduino with water pump. [Arduino](https://www.arduino.cc/en/about) designs, manufactures, and supports electronic devices and software, allowing people around the world to easily access advanced technologies that interact with the physical world
 
 <br><br>
 
