@@ -4,7 +4,9 @@
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png)
+**[PROJECT PHILOSOPHY](#project-philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#tech-stack) • [IMPLEMENTATION](#impplementation) • [HOW TO RUN?](#how-to-run)**
+
+![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png id='project-philosophy')
 
 >The SeedRoute app is a smart seeding system that assists amateur farmers through their planting experience.
 >SeedRoute guides the user from seeding to harvesting, passing through all the phases.
