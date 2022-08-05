@@ -16,9 +16,14 @@
 
 ### User Stories
 - As a user, I want to access a wide variety of plants with specific recommendations and information that help me decide on planting. 
-- As a user, I want to be reminded of watering the lands on certain schedule/timing
-- As a user, I want to be guided from an experienced farmer and have my questions answered 
-- As a user, I want to map my land in an organized way to have a better planting experience
+- As a user, I want to be reminded of watering the lands on certain schedule/timing.
+- As a user, I want to be guided from an experienced farmer and have my questions answered.
+- As a user, I want to map my land in an organized way to have a better planting experience.
+
+### Advisor Stories
+- As an advisor I prepare a profile that shows his experience in farming.
+- As an advisor I accept questions from other users.
+- As an advisor I chat with the users, where I can view their land as well, and give advices and answers their questions.
 
 ![title3](https://user-images.githubusercontent.com/97544165/182656884-0e9cb0ea-9258-46a7-b4a2-d14af31ca8c0.png)
 
