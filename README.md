@@ -23,7 +23,7 @@
 - As a user, I want to map my land in an organized way to have a better planting experience.
 
 ### Advisor Stories
-- As an advisor I prepare a profile that shows his experience in farming.
+- As an advisor I prepare a profile that shows my experience in farming.
 - As an advisor I accept questions from other users.
 - As an advisor I chat with the users, where I can view their land as well, and give advices and answers their questions.
 
