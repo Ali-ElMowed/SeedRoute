@@ -100,7 +100,8 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 | Edit Profile animated | Edit Profile |
 | -----| -----------------|
-| <img src="./README/editProfile.gif"> | ![Notifications](https://user-images.githubusercontent.com/97544165/183077657-f029d013-e2a5-4a20-a71d-69269bf6cd2c.PNG)
+
+| <img src="./README/editProfile.gif"> | ![editProfile](https://user-images.githubusercontent.com/97544165/183077810-e691a7e9-ebc9-463a-b6b3-f53a28456013.PNG)
 
 
 
@@ -115,7 +116,8 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 | Notification animated| Notifications |
 | -----| -----------------|
-| <img src="./README/notification.gif"> | ![Notifications](https://user-images.githubusercontent.com/97544165/182414293-c402242c-19a5-4170-8bd8-d60e27a4530c.PNG)
+| <img src="./README/notification.gif"> | ![Notifications](https://user-images.githubusercontent.com/97544165/183077962-fa49218b-de75-43b7-9331-91ab03e27528.PNG)
+
 
 | Planting animated | Planted Block  | Empty Block  |
 | -----------------| -----| -----|
