@@ -15,9 +15,10 @@
 >3.Provides a space for the user to contact an advisor to ask questions.
 
 ### User Stories
-- As a user, I want to find wider 
-- As a user, I want to browsse ablums, so that I can find quick links
-- As a user, I want to browsse ablums, so that I can find quick links
+- As a user, I want to access a wide variety of plants with specific recommendations and information that help me decide on planting. 
+- As a user, I want to be reminded of watering the lands on certain schedule/timing
+- As a user, I want to be guided from an experienced farmer and have my questions answered 
+- As a user, I want to map my land in an organized way to have a better planting experience
 
 ![title3](https://user-images.githubusercontent.com/97544165/182656884-0e9cb0ea-9258-46a7-b4a2-d14af31ca8c0.png)
 
