@@ -41,6 +41,16 @@ BluetoothSerial.on("bluetoothEnabled", () => {
   });
   BluetoothSerial.on("error", (err) => console.log(`Error: ${err.message}`));
 });
+const connect =(device)=> {
+  this.setState({ connecting: true })
+  BluetoothSerial.connect(device.id)
+  .then((res) => {
+    console.log(`Connected to device ${device.name}`);
+    
+    ToastAndroid.show(`Connected to device ${device.name}`, ToastAndroid.SHORT);
+  })
+  .catch((err) => console.log((err.message)))
+}
 
 const _renderItem = (item) => {
   return (
@@ -75,26 +85,59 @@ const toggleBluetooth = (value) => {
     disable();
   }
 };
+const discoverAvailableDevices= () => {
+    
+  if (this.state.discovering) {
+    return false
+  } else {
+    this.setState({ discovering: true })
+    BluetoothSerial.discoverUnpairedDevices()
+    .then((unpairedDevices) => {
+      const uniqueDevices = _.uniqBy(unpairedDevices, 'id');
+      console.log(uniqueDevices);
+      this.setState({ unpairedDevices: uniqueDevices, discovering: false })
+    })
+    .catch((err) => console.log(err.message))
+  }
+}
+const toggleSwitch= ()=>{
+  BluetoothSerial.write("T")
+  .then((res) => {
+    console.log(res);
+    console.log('Successfuly wrote to device')
+    this.setState({ connected: true })
+  })
+  .catch((err) => console.log(err.message))
+}
 
 return (
   <View style={styles.container}>
-    <View style={styles.toolbar}>
-      <Text style={styles.toolbarTitle}>Bluetooth Device List</Text>
-
-      <View style={styles.toolbarButton}>
-        <Switch
-          value={isEnabled}
-          onValueChange={(val) => this.toggleBluetooth(val)}
+      <View style={styles.toolbar}>
+            <Text style={styles.toolbarTitle}>Bluetooth Device List</Text>
+            <View style={styles.toolbarButton}>
+              <Switch
+                value={this.state.isEnabled}
+                onValueChange={(val) => this.toggleBluetooth(val)}
+              />
+            </View>
+      </View>
+        <Button
+          onPress={this.discoverAvailableDevices.bind(this)}
+          title="Scan for Devices"
+          color="#841584"
+        />
+        <FlatList
+          style={{flex:1}}
+          data={this.state.devices}
+          keyExtractor={item => item.id}
+          renderItem={(item) => this._renderItem(item)}
+        />
+        <Button
+          onPress={this.toggleSwitch.bind(this)}
+          title="Switch(On/Off)"
+          color="#841584"
         />
       </View>
-    </View>
-    <FlatList
-      style={{ flex: 1 }}
-      data={devices}
-      keyExtractor={(item) => item.id}
-      renderItem={(item) => this._renderItem(item)}
-    />
-  </View>
 );
 };
 const styles = StyleSheet.create({
