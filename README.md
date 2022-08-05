@@ -113,6 +113,7 @@ First, you need to have the latest npm version installed:
   ```sh
   npm install npm@latest -g
   ```
+Second, download expo go application on your mobile.
 
 ### Installation
 
@@ -121,7 +122,7 @@ First, you need to have the latest npm version installed:
    ```sh
    git clone [https://github.com/your_username_/Project-Name.git](https://github.com/Ali-ElMowed/SeedRoute.git)
    ```
-2. Install NPM packages
+2. Navigate to the "client" folder and Install NPM packages
    ```sh
    npm install
    ```
@@ -129,6 +130,7 @@ First, you need to have the latest npm version installed:
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+4. Scan the generated QR code with your camera (ios) or through the Expo Go application (android)
 
 
 
