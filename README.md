@@ -50,9 +50,9 @@
 
 
 
-| Ask Advisor animated| Ask Advisor  | Chat  |
-| --------| -----------------| -----|
-| <img src="https://drive.google.com/file/d/1GwuvUa98LVBFUeAHDJtvyCoJEMVep2rb/view?usp=sharing"> | ![Ask Advisor](https://user-images.githubusercontent.com/97544165/182411759-5134eeeb-dd23-4892-9b62-2efd00bd70bf.png) | ![Chat](https://user-images.githubusercontent.com/97544165/182411785-e975921f-0252-4f86-861d-7c6fd8b1826e.png)
+| Ask Advisor  | Chat  |
+| -----------------| -----|
+|![Ask Advisor](https://user-images.githubusercontent.com/97544165/182411759-5134eeeb-dd23-4892-9b62-2efd00bd70bf.png) | ![Chat](https://user-images.githubusercontent.com/97544165/182411785-e975921f-0252-4f86-861d-7c6fd8b1826e.png)
 
 
 | Block  | Watering  |
