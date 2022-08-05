@@ -120,27 +120,24 @@ class JWTController extends Controller
         ]);
     }
 
-    public function updateUser(Request $request)
+    public function updateUserTest
+    ( Request $request )
     {
 
+
+
         $user = auth()->user();
+        $user -> name = $request -> name;
+        $user -> email = $request -> email;
+        $user -> image = $request -> image;
+        $user -> update();
 
-        $user->update([
-            'name'=>$request->name,
-            'email'=>$request->email
-        ]);
-
-        if ($request->file('image') !== null) {
-            $path = $request->file('image')->store('uploads','public');
-            $user->update(['image' => $path]);
-        }
-
-        // $image = $request->image;  // your base64 encoded
-        // $image = str_replace('data:image/png;base64,', '', $image);
-        // $image = str_replace(' ', '+', $image);
-        // $imageName = str_random(10).'.'.'png';
-        // \File::put(storage_path(). '/' . $imageName, base64_decode($image));
-
+        $imageInfo = explode(";base64,", $request->image);
+        $imgExt = str_replace('data:image/', '', $imageInfo[0]);
+        $image = str_replace(' ', '+', $imageInfo[1]);
+        $imageName = "post-".time().".".$imgExt;
+        $image = $request->image;
+        Storage::disk('public_feeds')->put(base64_decode($image));
 
             return jsonResponse("user updated", 200);
 
