@@ -94,11 +94,12 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 
 | Sketch Land Animated| Sketch Land | My land  | 
-| -----| -----------------| -----| -----|
-| <img src="./README/sketchYourLand.gif"> | ![Sketch](https://user-images.githubusercontent.com/97544165/182413748-552b2018-4fd2-4e9d-a5b2-b87e9acc3369.PNG) | ![My land](https://user-images.githubusercontent.com/97544165/182413786-501a8a85-c766-4831-892b-92f42346068f.PNG) | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
+| -----| -----------------| -----|
+| <img src="./README/sketchYourLand.gif"> | ![Sketch](https://user-images.githubusercontent.com/97544165/182413748-552b2018-4fd2-4e9d-a5b2-b87e9acc3369.PNG) | ![My land](https://user-images.githubusercontent.com/97544165/182413786-501a8a85-c766-4831-892b-92f42346068f.PNG) 
 
 
 | Edit Profile animated | Edit Profile |
+| -----| -----------------|
 | <img src="./README/editProfile.gif"> | | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
 
 
@@ -108,14 +109,15 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 
 | Advisors animated| Advisors  | Chats  | 
-| -----| -----------------| -----| -----|
+| -----| -----------------| -----|
 | <img src="./README/ChatAdvisor.gif"> |![Advisors](https://user-images.githubusercontent.com/97544165/182414033-58731306-412f-4ce2-be0e-58fa61df71ca.PNG) | ![Chats](https://user-images.githubusercontent.com/97544165/182414072-ef5aba27-cf80-45d8-890d-e8d68a61ca43.PNG) 
 
 | Notification animated| Notifications |
+| -----| -----------------|
 | <img src="./README/notification.gif"> | ![Notifications](https://user-images.githubusercontent.com/97544165/182414293-c402242c-19a5-4170-8bd8-d60e27a4530c.PNG)
 
 | Planting animated | Planted Block  | Empty Block  |
-| -----------------| -----|
+| -----------------| -----| -----|
 |<img src="./README/doplant.gif"> | ![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182416350-4d3c6a2d-0dda-49b2-90bb-c81c71c2e2a4.PNG)
 
 
