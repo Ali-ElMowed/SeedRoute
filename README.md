@@ -4,7 +4,7 @@
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-<img src='./README/title.png' id="project-philosophy"/>
+<img src="./README/title.png" id="project-philosophy"/>
 
 ![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png#project-philosophy)
 
