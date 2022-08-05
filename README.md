@@ -4,9 +4,11 @@
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-**[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 <img src="./README/title2.png" id="project-philosophy"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 >The SeedRoute app is a smart seeding system that assists amateur farmers through their planting experience.
 >SeedRoute guides the user from seeding to harvesting, passing through all the phases.
@@ -29,6 +31,7 @@
 
 <img src="./README/title3.png" id="wireframes"/>
 
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 | Loading  | Login  |
 | -----------------| -----|
@@ -61,6 +64,8 @@
 
 <img src="./README/title4.png" id="tech"/>
 
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
+
 Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 - This project uses the [React Native](https://reactnative.dev/). Which is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications.
@@ -78,6 +83,8 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 <br><br>
 
 <img src="./README/title5.png" id="implementation"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 > Using the above mentioned tech stacks and the wireframes build with figma, the implementation of the app is shown as below, these are screenshots from the real app.
 
@@ -109,6 +116,8 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 
 <img src="./README/title6.png" id="run"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 > This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
