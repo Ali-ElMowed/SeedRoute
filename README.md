@@ -100,7 +100,7 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 | Edit Profile animated | Edit Profile |
 | -----| -----------------|
-| <img src="./README/editProfile.gif"> | | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
+| <img src="./README/editProfile.gif"> | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
 
 
 | Plants animated | Plants  | Plant  |
