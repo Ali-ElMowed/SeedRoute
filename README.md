@@ -37,9 +37,9 @@
 | -----------------| -----|
 | ![Loading](https://user-images.githubusercontent.com/97544165/182411029-e2110146-35d3-410b-99e0-c9ce95019dfd.png) | ![Login](https://user-images.githubusercontent.com/97544165/182411108-cd727cb2-df0d-4f8b-9ad5-1b9f726b074e.png)
 
-| Sketch Land  | My Land  |
-| -----------------| -----|
-| ![sketch your land](https://user-images.githubusercontent.com/97544165/182411367-b463569a-c044-4cc4-b034-272d95749ab7.png) | ![My land](https://user-images.githubusercontent.com/97544165/182411471-4a066e25-c2fe-4f88-a2c7-a212218337b8.png)
+| Sketch Land Animated| Sketch Land  | My Land  |
+| -----| -----------------| -----|
+| <img src="./README/sketchYourLand.gif"> | ![sketch your land](https://user-images.githubusercontent.com/97544165/182411367-b463569a-c044-4cc4-b034-272d95749ab7.png) | ![My land](https://user-images.githubusercontent.com/97544165/182411471-4a066e25-c2fe-4f88-a2c7-a212218337b8.png)
 
 
 
