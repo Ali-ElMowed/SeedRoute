@@ -37,9 +37,9 @@
 | -----------------| -----|
 | ![Loading](https://user-images.githubusercontent.com/97544165/182411029-e2110146-35d3-410b-99e0-c9ce95019dfd.png) | ![Login](https://user-images.githubusercontent.com/97544165/182411108-cd727cb2-df0d-4f8b-9ad5-1b9f726b074e.png)
 
-| Sketch Land Animated| Sketch Land  | My Land  |
-| -----| -----------------| -----|
-| <img src="./README/sketchYourLand.gif"> | ![sketch your land](https://user-images.githubusercontent.com/97544165/182411367-b463569a-c044-4cc4-b034-272d95749ab7.png) | ![My land](https://user-images.githubusercontent.com/97544165/182411471-4a066e25-c2fe-4f88-a2c7-a212218337b8.png)
+|  Sketch Land  | My Land  |
+|  -----------------| -----|
+|  ![sketch your land](https://user-images.githubusercontent.com/97544165/182411367-b463569a-c044-4cc4-b034-272d95749ab7.png) | ![My land](https://user-images.githubusercontent.com/97544165/182411471-4a066e25-c2fe-4f88-a2c7-a212218337b8.png)
 
 
 
@@ -93,25 +93,30 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 | ![login](https://user-images.githubusercontent.com/97544165/182413555-165d6f50-3da9-4c26-ab94-e7dcb5a92d10.PNG) | ![register](https://user-images.githubusercontent.com/97544165/182413607-2229498c-e3c8-4c0f-a250-a4ef9e5e6a1b.PNG)
 
 
-| Sketch Land | My land  | Edit Profile |
-| -----------------| -----| -----|
-| ![Sketch](https://user-images.githubusercontent.com/97544165/182413748-552b2018-4fd2-4e9d-a5b2-b87e9acc3369.PNG) | ![My land](https://user-images.githubusercontent.com/97544165/182413786-501a8a85-c766-4831-892b-92f42346068f.PNG) | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
+| Sketch Land Animated| Sketch Land | My land  | 
+| -----| -----------------| -----| -----|
+| <img src="./README/sketchYourLand.gif"> | ![Sketch](https://user-images.githubusercontent.com/97544165/182413748-552b2018-4fd2-4e9d-a5b2-b87e9acc3369.PNG) | ![My land](https://user-images.githubusercontent.com/97544165/182413786-501a8a85-c766-4831-892b-92f42346068f.PNG) | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
 
 
+| Edit Profile animated | Edit Profile |
+| <img src="./README/editProfile.gif"> | | ![editProfile](https://user-images.githubusercontent.com/97544165/182414182-21b33ff5-e945-4886-b4ea-f8140ca0c90f.PNG)
 
-| Plants  | Plant  |
+
+| Plants animated | Plants  | Plant  |
+| -----| -----------------| -----|
+| <img src="./README/search.gif"> |![plants](https://user-images.githubusercontent.com/97544165/182413898-bb4d1c6c-e7b3-4988-9996-001a6ee05001.PNG) | ![plant](https://user-images.githubusercontent.com/97544165/182413927-cfead480-9fc4-4623-9697-b539ca73dba6.PNG)
+
+
+| Advisors animated| Advisors  | Chats  | 
+| -----| -----------------| -----| -----|
+| <img src="./README/ChatAdvisor.gif"> |![Advisors](https://user-images.githubusercontent.com/97544165/182414033-58731306-412f-4ce2-be0e-58fa61df71ca.PNG) | ![Chats](https://user-images.githubusercontent.com/97544165/182414072-ef5aba27-cf80-45d8-890d-e8d68a61ca43.PNG) 
+
+| Notification animated| Notifications |
+| <img src="./README/notification.gif"> | ![Notifications](https://user-images.githubusercontent.com/97544165/182414293-c402242c-19a5-4170-8bd8-d60e27a4530c.PNG)
+
+| Planting animated | Planted Block  | Empty Block  |
 | -----------------| -----|
-| ![plants](https://user-images.githubusercontent.com/97544165/182413898-bb4d1c6c-e7b3-4988-9996-001a6ee05001.PNG) | ![plant](https://user-images.githubusercontent.com/97544165/182413927-cfead480-9fc4-4623-9697-b539ca73dba6.PNG)
-
-
-| Advisors  | Chats  | Notifications |
-| -----------------| -----| -----|
-| ![Advisors](https://user-images.githubusercontent.com/97544165/182414033-58731306-412f-4ce2-be0e-58fa61df71ca.PNG) | ![Chats](https://user-images.githubusercontent.com/97544165/182414072-ef5aba27-cf80-45d8-890d-e8d68a61ca43.PNG) | ![Notifications](https://user-images.githubusercontent.com/97544165/182414293-c402242c-19a5-4170-8bd8-d60e27a4530c.PNG)
-
-
-| Planted Block  | Empty Block  |
-| -----------------| -----|
-|![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182416350-4d3c6a2d-0dda-49b2-90bb-c81c71c2e2a4.PNG)
+|<img src="./README/doplant.gif"> | ![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182416350-4d3c6a2d-0dda-49b2-90bb-c81c71c2e2a4.PNG)
 
 
 
