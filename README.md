@@ -1,10 +1,14 @@
 # SeedRoute
-![title1](https://user-images.githubusercontent.com/97544165/182653531-26e571ed-da62-4f34-9f2d-ee2cc0b5eccb.png)
+<img src="./README/title1.png"/>
 
 >Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 <br>
 
-![title2](https://user-images.githubusercontent.com/97544165/182354021-a43a61e7-d6a1-420a-932e-71fd988f76bb.png#project-philosophy)
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
+
+<img src="./README/title2.png" id="project-philosophy"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 >The SeedRoute app is a smart seeding system that assists amateur farmers through their planting experience.
 >SeedRoute guides the user from seeding to harvesting, passing through all the phases.
@@ -21,12 +25,13 @@
 - As a user, I want to map my land in an organized way to have a better planting experience.
 
 ### Advisor Stories
-- As an advisor I prepare a profile that shows his experience in farming.
+- As an advisor I prepare a profile that shows my experience in farming.
 - As an advisor I accept questions from other users.
 - As an advisor I chat with the users, where I can view their land as well, and give advices and answers their questions.
 
-![title3](https://user-images.githubusercontent.com/97544165/182656884-0e9cb0ea-9258-46a7-b4a2-d14af31ca8c0.png)
+<img src="./README/title3.png" id="wireframes"/>
 
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 | Loading  | Login  |
 | -----------------| -----|
@@ -47,7 +52,7 @@
 
 | Ask Advisor  | Chat  |
 | -----------------| -----|
-| ![Ask Advisor](https://user-images.githubusercontent.com/97544165/182411759-5134eeeb-dd23-4892-9b62-2efd00bd70bf.png) | ![Chat](https://user-images.githubusercontent.com/97544165/182411785-e975921f-0252-4f86-861d-7c6fd8b1826e.png)
+|![Ask Advisor](https://user-images.githubusercontent.com/97544165/182411759-5134eeeb-dd23-4892-9b62-2efd00bd70bf.png) | ![Chat](https://user-images.githubusercontent.com/97544165/182411785-e975921f-0252-4f86-861d-7c6fd8b1826e.png)
 
 
 | Block  | Watering  |
@@ -57,7 +62,9 @@
 
 <br><br>
 
-![title4](https://user-images.githubusercontent.com/97544165/182354029-e65071d1-4226-40e6-8bcd-b92c99ef9412.png)
+<img src="./README/title4.png" id="tech"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
@@ -75,7 +82,9 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 <br><br>
 
-![title5](https://user-images.githubusercontent.com/97544165/182354031-5003503e-3ba0-4775-be25-d0e6efae6bd7.png)
+<img src="./README/title5.png" id="implementation"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 > Using the above mentioned tech stacks and the wireframes build with figma, the implementation of the app is shown as below, these are screenshots from the real app.
 
@@ -106,7 +115,9 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 
 
 
-![title6](https://user-images.githubusercontent.com/97544165/182354033-6d7f3eaa-0752-41ac-9dc6-7dac8f0aa7f0.png)
+<img src="./README/title6.png" id="run"/>
+
+> **[PROJECT PHILOSOPHY](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#project-philosophy) • [WIREFRAMES](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#wireframes) • [TECH STACK](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#tech) • [IMPLEMENTATION](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#implementation) • [HOW TO RUN?](https://github.com/Ali-ElMowed/SeedRoute/blob/master/README.md#run)**
 
 > This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
