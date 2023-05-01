@@ -123,9 +123,9 @@ Here's a brief high-level overview of the tech stack the SeedRoute app uses:
 | -----------------| -----| -----|
 |<img src="./README/doplant.gif"> | ![Block](https://user-images.githubusercontent.com/97544165/182414412-4584322c-3778-4d93-bd2e-e2828f866622.PNG)  | ![Empty block](https://user-images.githubusercontent.com/97544165/182416350-4d3c6a2d-0dda-49b2-90bb-c81c71c2e2a4.PNG)
 
-| Watering Pump Prototype |
+<!-- | Watering Pump Prototype |
 | ---------|
-| <img src="./README/pump.gif"> |
+| <img src="./README/pump.gif"> | -->
 
 <img src="./README/title6.png" id="run"/>
 
